@@ -16,6 +16,9 @@ a {
 .uk-article-meta > .uk-icon-comment {
   color: #444; }
 
+.uk-article-content {
+  font: 400 14px / 20px "Helvetica Neue",Helvetica,Arial,sans-serif; }
+
 .uk-icon-twitter {
   color: #00B0ED; }
 
