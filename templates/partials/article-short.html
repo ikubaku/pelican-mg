@@ -5,8 +5,7 @@
     <p class="uk-article-lead" itemprop="description">{{ article.summary|striptags|striptags }}</p>
     {% if not MG_DISABLE_SUMMARY %}<p>{{ ' '.join(article.content.split(' ')[:SUMMARY_MAX_LENGTH ])|striptags|striptags }}...</p>{% endif %}
     <a href="{{ SITEURL }}/{{ article.url }}">Read More</a>
-    {% set bullet = joiner(" &bullet; ") %}
-    <div align="right" title="Tags">{% for tag in article.tags %}{{bullet()}}<a class="mg-tag" href="{{tag.url}}"><i class="uk-icon-tag"></i>{{tag.name}}</a>{% endfor %}</div>
+    {% include "partials/inline-tags.html" %}
     <hr class="uk-article-divider">
 </article>
 
