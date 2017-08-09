@@ -21,7 +21,7 @@
 <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="{% block description %}{{ DESCRIPTION }}{% endblock %}">
-<link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE }}">
+{% if FAVICON %}<link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE|default('image/x-icon') }}">{% endif %}
 <meta name="author" content="{{ AUTHOR }}">
 <meta name="copyright" content="{{ AUTHOR }}">
 <meta name="twitter:card" content="summary" />
@@ -90,17 +90,19 @@
             {% if not DISABLE_SEARCH %}
             <div class="uk-panel uk-panel-box">
                 <form class="uk-search" action="{{ SITEURL }}/search.html" data-uk-search>
-                    <input class="uk-search-field tipue_search" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
+                    <input class="uk-search-field tipue_search" type="search" name="q" autocomplete="off" placeholder="Search...">
                 </form>
             </div>
             {% endif %}
 
             <div class="uk-panel uk-panel-box">
                 <ul class="uk-nav uk-nav-side">
+                    {% if CATEGORY_SAVE_AS %}
                     <li class="uk-nav-header">Categories</li>
                     {% for cat, _ in categories %}
                     <li {% if cat == category %}class="uk-active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
                     {% endfor %}
+                    {% endif %}
                     {% if DISPLAY_PAGES_ON_MENU != False %}
                     <li class="uk-nav-header">Pages</li>
 
@@ -112,8 +114,10 @@
 
                     {% endif %}
 
+                    {% if ARCHIVE_SAVE_AS %}
                     <li class="uk-nav-divider"></li>
                     <li {% if page_name == 'archives' %}class="uk-active"{% endif %}><a href="{{ SITEURL }}/archives.html">Archives</a></li>
+                    {% endif %}
                 </ul>
             </div>
 
@@ -144,7 +148,7 @@
 <footer class="mg-footer">
     <div class="uk-container uk-container-center uk-text-center">
 
-        <div class="mg-icons-small uk-subnav uk-visible-small">
+        <ul class="mg-icons-small uk-subnav uk-visible-small">
             <li><a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="uk-icon-button uk-icon-rss"></a></li>
             {% if SOCIAL %}
             {% for icon, link in SOCIAL %}
@@ -153,7 +157,7 @@
             </li>
             {% endfor %}
             {% endif %}
-        </div>
+        </ul>
 
         <div class="mg-author uk-panel">
             <p>{{ FOOTER }}</p>
@@ -168,7 +172,7 @@
 
         {% if not DISABLE_SEARCH %}
         <form class="uk-search" action="{{ SITEURL }}/search.html" data-uk-search>
-            <input class="uk-search-field" type="search" name="q" id="tipue_search_input" autocomplete="off" placeholder="Search...">
+            <input class="uk-search-field tipue_search" type="search" name="q" autocomplete="off" placeholder="Search...">
         </form>
         {% endif %}
 

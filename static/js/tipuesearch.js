@@ -97,7 +97,7 @@ http://www.tipue.com/search
                }
                if (getURLP('q'))
                {
-                    $('#tipue_search_input').val(getURLP('q'));
+                    $('.tipue_search')[0].val(getURLP('q'));
                     getTipueSearch(0, true);
                }               
                
@@ -120,7 +120,7 @@ http://www.tipue.com/search
                     var c = 0;
                     found = new Array();
                     
-                    var d = $('#tipue_search_input').val().toLowerCase();
+                    var d = $('.tipue_search')[0].val().toLowerCase();
                     d = $.trim(d);
                     
                     if ((d.match("^\"") && d.match("\"$")) || (d.match("^'") && d.match("'$")))

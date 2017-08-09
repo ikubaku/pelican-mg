@@ -1,5 +1,9 @@
+html, h1 {
+  font-family: "Oswald", "Helvetica Neue",Helvetica,Arial,sans-serif; }
 html {
-  font: 400 14px / 20px "Oswald", "Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px; }
 
 a {
   color: #33b5e5; }
