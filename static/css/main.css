@@ -162,14 +162,14 @@ a {
   display: inline-block;
   height: 28px;
   width: 28px;
-  background-image: url(../../images/shaarli-icon.png);
+  background-image: url(../shaarli-icon.png);
   background-size: contain;}
 .uk-icon-stackoverflow:before {
   content: ' ';
   display: inline-block;
   height: 28px;
   width: 28px;
-  background-image: url(../../images/stackoverflow-icon.png);
+  background-image: url(../stackoverflow-icon.png);
   background-size: contain;}
 
 .mg-support-logo {
