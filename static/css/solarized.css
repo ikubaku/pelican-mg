@@ -12,7 +12,7 @@
  * cyan #2aa198 strings, numbers
  * green #859900 operators, other keywords
  * */
- 
+
 .highlight { background-color: #fdf6e3; color: #586e75 }
 .highlight .c { color: #93a1a1 } /* Comment */
 .highlight .err { color: #586e75 } /* Error */
@@ -81,4 +81,4 @@
 .highlight .vc { color: #268bd2 } /* Name.Variable.Class */
 .highlight .vg { color: #268bd2 } /* Name.Variable.Global */
 .highlight .vi { color: #268bd2 } /* Name.Variable.Instance */
-.highlight .il { color: #2aa198 } /* Literal.Number.Integer.Long */ 
+.highlight .il { color: #2aa198 } /* Literal.Number.Integer.Long */

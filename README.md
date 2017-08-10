@@ -6,7 +6,7 @@ The theme is suited for a single author blog without tag pages nor
 blogroll. Feeds are provided via ATOM.
 
 
-Screenshots 
+Screenshots
 --------------
 
 Here is how the home page look like
@@ -17,7 +17,7 @@ This is the article page
 
 ![mg article page screenshot](https://raw.githubusercontent.com/lucachr/pelican-mg/master/article-screenshot.png)
 
-The home page on a smartphone 
+The home page on a smartphone
 
 ![mg home page smartphone top screenshot](https://github.com/lucachr/pelican-mg/blob/master/home-page-smartphone-top.png)
 ![mg home page smartphone bottom screenshot](https://github.com/lucachr/pelican-mg/blob/master/home-page-smartphone-bottom.png)
@@ -69,47 +69,47 @@ If you want to use mg with search disabled.
 
 ###Optional settings
 
-**ALT_NAME**  
+**ALT_NAME**
 An alternative name for your site. It appears in the header bar.
 
-**DESCRIPTION**  
+**DESCRIPTION**
 A brief description of your site, for social networks and search engines.
 
-**DISABLE_SEARCH**  
+**DISABLE_SEARCH**
 Disable search, boolean.
 
-**FAVICON**  
+**FAVICON**
 The relative path of your favicon, this is needed for Disqus forum favicon.
 
-**FAVICON_TYPE**  
+**FAVICON_TYPE**
 The MIME type of your favicon, this is needed for Disqus forum favicon.
 
-**FOOTER**  
+**FOOTER**
 A custom footer notice.
 
-**META_IMAGE**  
-The absolute URL of a custom image for the `og:image` meta property, Twitter 
-summary card, and `image` meta property of Schema.org. This image is used in 
-every page of the blog. Articles and pages can override the default 
-**META_IMAGE** by setting the "image" metadata in the relative file.  
+**META_IMAGE**
+The absolute URL of a custom image for the `og:image` meta property, Twitter
+summary card, and `image` meta property of Schema.org. This image is used in
+every page of the blog. Articles and pages can override the default
+**META_IMAGE** by setting the "image" metadata in the relative file.
 
-**META_IMAGE_TYPE**  
+**META_IMAGE_TYPE**
 The MIME type for **META_IMAGE**, this is needed for `og:image:type`.
 
-**SC_PROJECT**   
-The StatCounter project number.  
+**SC_PROJECT**
+The StatCounter project number.
 
-**SC_SECURITY**   
+**SC_SECURITY**
 The StatCounter security code for the project.
 
-**SHARE**  
+**SHARE**
 Enable share buttons, boolean.
 
-**SOCIAL**  
+**SOCIAL**
 A list of tuples (icon, URL). The icons are from [Font Awesome]
-(http://fortawesome.github.io/Font-Awesome/). The suffix "-square" is removed 
-in the footer icons of the small screen layout.   
-e.g.   
+(http://fortawesome.github.io/Font-Awesome/). The suffix "-square" is removed
+in the footer icons of the small screen layout.
+e.g.
 ```python
     SOCIAL = (('twitter', 'https://twitter.com/luca_chr'),
               ('google-plus-square', 'https://plus.google.com/117284397605208270870'),

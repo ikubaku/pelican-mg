@@ -1,8 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Categories{% endblock %} 
+{% block title %}Categories{% endblock %}
 {% block description %}{% endblock %}
-
-{% include 'common_seo.html' %}
 
 {% block content %}
 <div class="uk-width-medium-4-5">
@@ -18,7 +16,7 @@
             </p>
             <p>{{ ' '.join(article.content.split(' ')[0:75])|striptags }}...</p>
         </article>
-        
+
         {% endfor %}
 
         <hr>

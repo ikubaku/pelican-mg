@@ -1,0 +1,34 @@
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: v0.9.1
+    hooks:
+    -   id: check-merge-conflict
+    -   id: trailing-whitespace
+        args:
+        - --no-markdown-linebreak-ext
+-   repo: git://github.com/Lucas-C/pre-commit-hooks
+    sha: v1.0.1
+    hooks:
+    -   id: remove-crlf
+        exclude: npp/.*\.xml
+    -   id: remove-tabs
+-   repo: https://github.com/Lucas-C/pre-commit-hooks-html
+    sha: v1.2.1
+    hooks:
+    -   id: validate-html
+        args:
+        - --remove-mustaches
+        - --mustache-remover=jinja2
+        - --templates-include-dir=templates
+        - "--ignore=Expected \"<!DOCTYPE html>\""
+        - "--ignore=Element \"title\" must not be empty"
+        - "--ignore=Element \"head\" is missing a required instance of child element \"title\""
+        - "--ignore=The \"itemprop\" attribute was specified, but the element is not a property of any item"
+        - "--ignore=Bad value \"DUMMY\" for attribute \"datetime\""
+        exclude: templates/tipue_search.html
+-   repo: local
+    hooks:
+    -   id: make
+        name: make
+        language: system
+        entry: make
+        files: ''

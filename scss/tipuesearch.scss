@@ -6,7 +6,7 @@
  *
  * This is a modified version of the Tipue Search plugin style sheet,
  * edited for the pelican mg theme.
- * If you are looking for the original Tipue Search plugin style sheet 
+ * If you are looking for the original Tipue Search plugin style sheet
  * check the project home at http://www.tipue.com/search.
  */
 
@@ -26,7 +26,7 @@ $baseText: #444;
 }
 
 #tipue_search_loading:before {
-    padding-top: 60px;     
+    padding-top: 60px;
     font-family: FontAwesome;
     content: "\f013";
     background: #fff no-repeat left;
@@ -51,7 +51,7 @@ $baseText: #444;
 }
 
 #tipue_search_warning a:hover {
-    color: #333;  
+    color: #333;
 }
 
 .tipue_search_content_title {
@@ -60,13 +60,13 @@ $baseText: #444;
     font-weight: 400;
     text-transform: none;
     margin-top: 0.5em;
-} 
+}
 
 .tipue_search_content_title a {
     color: $baseText;
     text-decoration: none;
     &:hover {
-        color: $baseText;    
+        color: $baseText;
         text-decoration: underline;
     }
 }
