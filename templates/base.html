@@ -137,6 +137,27 @@
             </div>
             {% endif %}
 
+            {% if LINKS %}
+            <div class="uk-panel uk-panel-box">
+                <h3 class="uk-panel-title">Blogroll</h3>
+                <ul class="uk-nav uk-nav-side">
+                {% for text, url in LINKS %}
+                <li><a href="{{ url }}">{{ text }}</a></li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+
+            {% if SUPPORTS %}
+            <div class="uk-panel uk-panel-box">
+                {% for name, link, logo_url, title in SUPPORTS %}
+                <a href="{{ link }}">
+                    <img class="mg-support-logo" src="{{ logo_url }}" alt="Logo {{ name }}" title="{{ title }}">
+                </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+
         </div>
 
     </div>

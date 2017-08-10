@@ -1,4 +1,4 @@
-html, h1 {
+html, h1, h2, h3 {
   font-family: "Oswald", "Helvetica Neue",Helvetica,Arial,sans-serif; }
 html {
   font-weight: 400;
@@ -156,6 +156,24 @@ a {
   background-color: #333; }
 .mg-icons-small .uk-icon-envelope {
   background-color: #059; }
+
+.uk-icon-shaarli:before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(../../images/shaarli-icon.png);
+  background-size: contain;}
+.uk-icon-stackoverflow:before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(../../images/stackoverflow-icon.png);
+  background-size: contain;}
+
+.mg-support-logo {
+  margin: .5rem;}
 
 .mg-badges li {
   float: left;
