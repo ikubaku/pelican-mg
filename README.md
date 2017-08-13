@@ -176,6 +176,7 @@ This is the settings file for Dev's Bytes.
 
     TAG_SAVE_AS = ''
     AUTHOR_SAVE_AS = ''
+    PLUGINS = ['representative_image']
     DIRECT_TEMPLATES = ('index', 'categories', 'archives', 'search', 'tipue_search')
     TIPUE_SEARCH_SAVE_AS = 'tipue_search.json'
 
