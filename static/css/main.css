@@ -105,12 +105,34 @@ a {
   margin-bottom: 3em;
   min-height: 100%; }
 
+.mg-article-short {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; }
+  article:nth-child(even) > .mg-article-short {
+    flex-direction: row-reverse; }
+.mg-article-image {
+  flex: 1 1 15rem;
+  min-height: 0; /* required for flexbox shrink to work properly - Chrome 60 */
+  min-width: 0; /* required for flexbox shrink to work properly - Chrome 60 */
+  max-height: 50%;
+  max-width: 50%;
+  padding: 1rem;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; }
+.mg-article-content {
+  flex: 3 1 35rem; }
+
 .mg-feed {
   color: #FF6600; }
   .mg-feed:hover {
     text-decoration: none;
     color: #FF6600; }
 
+.mg-tags {
+  text-align: right; }
 .mg-tag {
   margin: 0 .5rem;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;

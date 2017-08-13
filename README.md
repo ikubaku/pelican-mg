@@ -2,8 +2,7 @@ mg
 ==============
 
 A minimal theme for [Pelican](http://blog.getpelican.com/) that uses uikit.
-The theme is suited for a single author blog without tag pages nor
-blogroll. Feeds are provided via ATOM.
+The theme is suited for a single author blog. Feeds are provided via ATOM.
 
 
 Screenshots
@@ -28,7 +27,7 @@ This is the article layout on a smartphone screen
 
 Live Example
 --------------
-Check out [my blog](http://www.devsbytes.com).
+Check out [my blog](https://chezsoi.org/lucas).
 
 Features
 --------------
@@ -38,11 +37,19 @@ Features
 * [Schema.org](http://schema.org) support.
 * Search with [Tipue Search](http://www.tipue.com/search).
 * Responsive design.
-* Comment with DISQUS.
+* Comment with DISQUS or inno
 * SCSS style sheets.
 * Analytics with Google Analytics, PIWIK and StatCounter.
 * Share buttons built with share urls.
 * Custom footer notice.
+* W3C-Validatated HTML
+
+Install
+-------
+This template uses the [representative_image](https://github.com/getpelican/pelican-plugins/tree/master/representative_image) plugin, so you will need to:
+
+    pip install beautifulsoup4
+
 
 Settings
 --------------
@@ -116,6 +123,9 @@ e.g.
               ('github', 'https://github.com/lucachr'),
               ('envelope', 'mailto:luca92web@gmail.com'),)
 ```
+
+**MG_DISABLE_SUMMARY**
+If you do not manually provide a summary on your articles, set this to `True` so that that the articles summary is not included on the index / search result pages.
 
 Example Configuration
 ----------------------

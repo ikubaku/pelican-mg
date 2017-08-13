@@ -230,9 +230,9 @@
             {% if SUPPORTS %}
             <li class="uk-nav-divider"></li>
             {% for name, link, logo_url, title in SUPPORTS %}
-            <a href="{{ link }}">
+            <li><a href="{{ link }}">
                 <img class="mg-support-logo" src="{{ logo_url }}" alt="Logo {{ name }}" title="{{ title }}">
-            </a>
+            </a></li>
             {% endfor %}
             {% endif %}
         </ul>
