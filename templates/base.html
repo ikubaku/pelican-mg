@@ -55,7 +55,6 @@
 <link rel="stylesheet" href="{{ SITEURL }}/theme/css/solarized-highlight.css">
 <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
 
-<script src="{{ SITEURL }}/theme/js/html5shiv-3.7.2.min.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -71,13 +70,10 @@
             <div class="mg-tagline uk-navbar-content">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</div>
         </div>
 
-        {% if MG_FILTER_TAGS %}
-        <div class="mg-tag-filters uk-hidden-small">
-            {% for filter_tag in MG_FILTER_TAGS %}
-            <button class="mg-tag-filter">{{ filter_tag.replace('lang:', '') }}</button>
-            {% endfor %}
+        <div class="mg-header-extra uk-hidden-small">
+            {% block header_extra %}
+            {% endblock %}
         </div>
-        {% endif %}
 
         <div class="mg-nav-small uk-visible-small">
             <a class="mg-nav-menu-toggle-small uk-navbar-toggle" href="#mg-offcanvas" data-uk-offcanvas></a>
@@ -250,20 +246,27 @@
     </div>
 </aside>
 
+<script src="{{ SITEURL }}/theme/js/html5shiv-3.7.2.min.js"></script>
 <script src="{{ SITEURL }}/theme/js/jquery-1.10.2.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 <script src="{{ SITEURL }}/theme/js/uikit-2.27.4.min.js"></script>
 {% if not DISABLE_SEARCH %}
 <script src="{{ SITEURL }}/theme/js/uikit-2.27.4-search.min.js"></script>
 <script src="{{ SITEURL }}/theme/js/tipuesearch_set.js"></script>
 <script src="{{ SITEURL }}/theme/js/tipuesearch.js"></script>
+<script>
+{% include 'js/enable-search.js' %}
+</script>
 {% endif %}
+{% if SHARE %}
 <script src="{{ SITEURL }}/theme/js/jquery.sticky-kit.js"></script>
-<script src="{{ SITEURL }}/theme/js/plugins.js"></script>
-{% if DISABLE_SEARCH %}
-<script src="{{ SITEURL }}/theme/js/main.js"></script>
-{% else %}
-<script src="{{ SITEURL }}/theme/js/main-search.js"></script>
+<script>
+{% include 'js/social.js' %}
+</script>
+{% endif %}
+{% if MG_FILTER_TAGS %}
+<script>
+{% include 'js/filter-tags.js' %}
+</script>
 {% endif %}
 
 {% include 'disqus_count.html' %}

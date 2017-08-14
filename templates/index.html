@@ -1,12 +1,22 @@
 {% extends "base.html" %}
+
 {% block content_title %}{% endblock %}
+
+{% block header_extra %}
+{% if MG_FILTER_TAGS %}
+{% for filter_tag in MG_FILTER_TAGS %}
+<button class="mg-tag-filter" onclick="toggleTagFilter('{{ filter_tag }}')">{{ filter_tag.replace('lang:', '') }}</button>
+{% endfor %}
+{% endif %}
+{% endblock %}
+
 {% block content %}
 <div class="uk-width-medium-4-5">
 
 {% if articles %}
 {% for article in (articles_page.object_list if articles_page else articles) %}
 
-    {% if loop.index == 1 %}
+    {% if not MG_NO_EXCERPT and loop.index == 1 %}
         {% include "partials/article-excerpt.html" %}
     {% else %}
         {% include "partials/article-short.html" %}

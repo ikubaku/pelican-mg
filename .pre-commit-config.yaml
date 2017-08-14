@@ -29,7 +29,8 @@
         - "--ignore=Bad value \"DUMMY\" for attribute \"datetime\""
         - "--ignore=Bad value \"DUMMY\" for attribute \"lang\" on element \"html\""
         - "--ignore=Bad value \"DUMMY\" for attribute \"type\" on element \"link\": Subtype missing"
-        exclude: templates/tipue_search.html
+        files: ^templates/[^/]*\.html$
+        exclude: ^templates/(index|tipue_search)\.html$
 -   repo: local
     hooks:
     -   id: make

@@ -1,4 +1,5 @@
-<article itemtype="http://schema.org/BlogPosting" itemscope="itemscope" itemprop="blogPost">
+<article class="uk-article" itemtype="http://schema.org/BlogPosting" itemscope="itemscope" itemprop="blogPost"
+         data-tags='{{ article.tags|map(attribute='name')|list|tojson }}'>
     <div class="mg-article-short">
         {% if article.featured_image %}
         <img class="mg-article-image" src="{{ article.featured_image }}" alt="">

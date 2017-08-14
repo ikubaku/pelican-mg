@@ -113,7 +113,7 @@ a {
   font-weight: 800;
   color: white; }
 
-.mg-tag-filters {
+.mg-header-extra {
   flex: 1;
   display: flex;
   justify-content: flex-end; }
@@ -129,10 +129,6 @@ a {
 .mg-tag-filter:hover {
   border-color: #b2b2b2;
   text-decoration: none;}
-.mg-tag-filter:hover {
-  text-decoration: none; }
-.mg-tag-filter:not(:disabled) {
-  cursor: pointer; }
 
 .mg-nav-small {
   width: 100% }
