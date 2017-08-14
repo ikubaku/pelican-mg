@@ -1,8 +1,8 @@
-<article class="uk-article" itemtype="http://schema.org/BlogPosting" itemscope="itemscope" itemprop="blogPost"
+<article class="uk-article mg-fadeable" itemtype="http://schema.org/BlogPosting" itemscope="itemscope" itemprop="blogPost"
          data-tags='{{ article.tags|map(attribute='name')|list|tojson }}'>
     <div class="mg-article-short">
         {% if article.featured_image %}
-        <img class="mg-article-image" src="{{ article.featured_image }}" alt="">
+        <img class="mg-article-image image-process-thumb" src="{{ article.featured_image }}" alt="">
         {% endif %}
         <div class="mg-article-content">
             <a href="{{ SITEURL }}/{{ article.url }}" class="uk-link-muted"><h1 class="uk-article-title" itemprop="name">{{ article.title|e }}</h1></a>

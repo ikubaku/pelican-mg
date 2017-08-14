@@ -3,9 +3,12 @@
 {% block content_title %}{% endblock %}
 
 {% block header_extra %}
+{% if MG_LANG_FILTER_TAGS %}
+<button class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)({{ MG_LANG_FILTER_TAGS|tojson }})'>lang</button>
+{% endif %}
 {% if MG_FILTER_TAGS %}
 {% for filter_tag in MG_FILTER_TAGS %}
-<button class="mg-tag-filter" onclick="toggleTagFilter('{{ filter_tag }}')">{{ filter_tag.replace('lang:', '') }}</button>
+<button class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')">{{ filter_tag.replace('lang:', '') }}</button>
 {% endfor %}
 {% endif %}
 {% endblock %}

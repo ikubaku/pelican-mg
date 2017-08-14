@@ -125,10 +125,17 @@ a {
   font: inherit;
   padding: .5rem 1.5rem;
   margin: .5rem 1rem;
-  text-transform: uppercase; }
-.mg-tag-filter:hover {
-  border-color: #b2b2b2;
-  text-decoration: none;}
+  text-transform: uppercase;
+  cursor: pointer; }
+  .mg-tag-filter:hover {
+    border-color: #b2b2b2;
+    text-decoration: none; }
+  .mg-tag-filter-enabled {
+    background-color: #33b5e5;
+    border-color: black; }
+  .mg-tag-filter-disabled {
+    background-color: #FF9148;
+    border-color: black;    }
 
 .mg-nav-small {
   width: 100% }
@@ -268,3 +275,13 @@ a {
 .mg-cloud-tag-badge {
   color: #FF6600; }
 
+
+.mg-fadeable {
+  max-height: 100vh;
+  overflow: hidden;
+  transition: max-height 1s ease-in;
+}
+.mg-faded {
+  max-height: 0;
+  transition: max-height 1s ease-out;
+}
