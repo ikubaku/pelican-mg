@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Tag cloud{% endblock %}
+{% block description %}{% endblock %}
+
+{% block content %}
+<ul class="mg-tagcloud">
+    {% for tag in tag_cloud if not tag.0.name.startswith('lang:') %}
+        <li class="mg-cloud-tag mg-cloud-tag-size-{{ tag.1 }}">
+            <a href="{{ SITEURL }}/{{ tag.0.url }}">
+            {{ tag.0 }}
+            {% if TAG_CLOUD_BADGE %}
+            <span class="mg-cloud-tag-badge">({{ tag.2 }})</span>
+            {% endif %}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
