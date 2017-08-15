@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title|striptags }}{% endblock %}
-{% block description %}{{ article.summary|striptags }}{% endblock %}
+{% block description %}{{ article.summary|striptags|e }}{% endblock %}
 {% block seo %}
 
 <meta property="og:title" content="{{ article.title|capitalize }}" />
@@ -46,7 +46,7 @@
     <div class="uk-panel" id="mg-panel-social">
         <ul class="uk-nav uk-nav-side">
             <li>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" taget="_blank" class="uk-button"><i class="uk-icon-facebook-square"></i> Share</a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" class="uk-button"><i class="uk-icon-facebook-square"></i> Share</a>
             </li>
             <li>
             <a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button" target="_blank"><i class="uk-icon-twitter"></i> Tweet</a>
@@ -71,7 +71,7 @@
         </p>
 
         {% if SHARE %}
-        <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" taget="_blank" class="uk-button uk-visible-small"><i class="uk-icon-facebook-square"></i> Share</a>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank" class="uk-button uk-visible-small"><i class="uk-icon-facebook-square"></i> Share</a>
         <a href="https://twitter.com/intent/tweet?text={{ article.title|striptags|urlencode }}&url={{ SITEURL }}/{{ article.url }}&via={{ TWITTER_USERNAME }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="uk-button uk-visible-small" target="_blank"><i class="uk-icon-twitter"></i> Tweet</a>
         <a href="https://plus.google.com/share?url={{ SITEURL }}/{{ article.url }}" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" class="uk-button uk-visible-small"><i class="uk-icon-google-plus-square"></i> Share</a>
         {% endif %}
