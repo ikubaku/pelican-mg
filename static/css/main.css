@@ -174,15 +174,16 @@ a {
     color: #FF6600; }
 
 .mg-tags {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   text-align: right; }
 .mg-tag {
   margin: 0 .5rem;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #FF6600; }
   .mg-tag:hover {
     text-decoration: none;
     color: #FF6600; }
   .mg-tag > .uk-icon-tag {
+    display: inline; /* so that the icon stick with the tag label */
     margin-right: .2rem; }
 
 .mg-list-title {

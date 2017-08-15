@@ -1,5 +1,5 @@
 <article class="uk-article mg-fadeable" itemtype="http://schema.org/BlogPosting" itemscope="itemscope" itemprop="blogPost"
-         data-tags='{{ article.tags|map(attribute='name')|list|tojson }}'>
+         data-tags='{{ article.tags|map(attribute="name")|list|tojson }}'>
     <div class="mg-article-short">
         {% if article.featured_image %}
         <img class="mg-article-image image-process-thumb" src="{{ article.featured_image }}" alt="">
@@ -19,4 +19,3 @@
     </div>
     <hr class="uk-article-divider">
 </article>
-

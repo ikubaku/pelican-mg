@@ -1,3 +1,9 @@
-{% set bullet = joiner(" &bullet; ") %}
-<div class="mg-tags" title="Tags">{% for tag in article.tags %}{{bullet()}}<a class="mg-tag" href="{{tag.url}}"><i class="uk-icon-tag">&nbsp;{{tag.name}}</i></a>{% endfor %}</div>
-
+{% set bullet = joiner(" • ") %}
+<div class="mg-tags" title="Tags">
+{% for tag in article.tags %}
+    {{bullet()}}
+    <a class="mg-tag" href="{{tag.url}}">
+        <i class="uk-icon-tag"></i>{{tag.name}}
+    </a>
+{% endfor %}
+</div>
