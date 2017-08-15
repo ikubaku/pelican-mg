@@ -4,9 +4,9 @@
         {% for item in articles + pages %}
         {{comma()}}
         {
-            "title": "{{item.title|striptags|e}}",
-            "text":"{{item.content|striptags|e}}",
-            "tags": "{{item.tags}}",
+            "title": {{item.title|striptags|tojson}},
+            "text": {{item.content|striptags|tojson}},
+            "tags": "{{' '.join(item.tags|map(attribute="name"))}}",
             "loc": "{{ SITEURL }}/{{item.url}}"
         }
         {% endfor %}
