@@ -47,12 +47,6 @@ a {
 .uk-icon-google-plus, .uk-icon-google-plus-square {
   color: #D34836; }
 
-.uk-icon-github {
-  color: #333; }
-
-.uk-icon-envelope {
-  color: #444; }
-
 .uk-nav-side > li.uk-active > a {
   background: #28D1B2; }
 
@@ -126,9 +120,9 @@ a {
   align-items: center; }
 .mg-tag-filter {
   background-color: transparent;
-  border: 1px solid white;
+  border: 2px solid white;
   overflow: visible;
-  color: black;
+  color: #444;
   font: inherit;
   padding: .5rem 1.5rem;
   margin: .5rem 1rem;
@@ -138,11 +132,9 @@ a {
     border-color: #b2b2b2;
     text-decoration: none; }
   .mg-tag-filter-enabled {
-    background-color: #33b5e5;
-    border-color: black; }
+    background-color: #33b5e5; }
   .mg-tag-filter-disabled {
-    background-color: #FF9148;
-    border-color: black;    }
+    background-color: #FF9148;  }
 
 .mg-nav-small {
   width: 100% }
@@ -209,17 +201,17 @@ a {
 .mg-author {
   margin-top: 1em; }
 
+.mg-icon-link {
+  padding: .3rem;
+  color: #444; }
 .mg-icon-link:hover {
   text-decoration: none; }
 
 .mg-icons-small {
   margin-bottom: 1em; }
 
-.mg-icons-small > li > a {
-  color: white; }
-  .mg-icons-small > li > a:hover {
-    color: white; }
 .mg-icons-small .uk-icon-rss {
+  color: white;
   background-color: #FF6600; }
 .mg-icons-small .uk-icon-twitter {
   background-color: #00B0ED; }
@@ -227,8 +219,6 @@ a {
   background-color: #3B5999; }
 .mg-icons-small .uk-icon-google-plus {
   background-color: #D34836; }
-.mg-icons-small .uk-icon-github {
-  background-color: #333; }
 .mg-icons-small .uk-icon-envelope {
   background-color: #059; }
 
@@ -238,14 +228,16 @@ a {
   height: 28px;
   width: 28px;
   background-image: url(../shaarli-icon.png);
-  background-size: contain;}
+  background-size: contain;
+  vertical-align: middle; }
 .uk-icon-stackoverflow:before {
   content: ' ';
   display: inline-block;
   height: 28px;
   width: 28px;
   background-image: url(../stackoverflow-icon.png);
-  background-size: contain;}
+  background-size: contain;
+  vertical-align: middle; }
 
 .mg-support-logo {
   margin: .5rem;}

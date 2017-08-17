@@ -95,9 +95,9 @@ http://www.tipue.com/search
                {
                     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20')) || null;
                }
-               if (getURLP('content'))
+               if (getURLP('q'))
                {
-                    $('main .tipue_search').val(getURLP('content'));
+                    $('main .tipue_search').val(getURLP('q'));
                     getTipueSearch(0, true);
                }
 
