@@ -136,8 +136,9 @@
 
             {% if not DISABLE_SEARCH %}
             <div class="uk-panel uk-panel-box">
-                <form class="uk-search" action="{{ SITEURL }}/search.html" data-uk-search>
-                    <input class="uk-search-field tipue_search" type="search" name="q" autocomplete="off" placeholder="Search...">
+                <form class="mg-search" action="{{ SITEURL }}/search.html" data-uk-search>
+                    <input type="submit" class="mg-search-button" value="&#xf002;">
+                    <input class="mg-search-query uk-search-field tipue_search" type="search" name="content" autocomplete="off" placeholder="Search...">
                 </form>
             </div>
             {% endif %}
@@ -202,8 +203,9 @@
     <div class="uk-offcanvas-bar">
 
         {% if not DISABLE_SEARCH %}
-        <form class="uk-search" action="{{ SITEURL }}/search.html" data-uk-search>
-            <input class="uk-search-field tipue_search" type="search" name="q" autocomplete="off" placeholder="Search...">
+        <form class="mg-search" action="{{ SITEURL }}/search.html" data-uk-search>
+            <input type="submit" class="mg-search-button" value="&#xf002;">
+            <input class="uk-search-field tipue_search" type="search" name="content" autocomplete="off" placeholder="Search...">
         </form>
         {% endif %}
 

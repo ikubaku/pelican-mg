@@ -19,13 +19,15 @@ html {
   line-height: 20px; }
 
 a {
-  color: #33b5e5; }
+  color: #007fae; }
   a:hover {
-    color: #0099cc; }
+    color: #33b5e5; }
 
 .uk-navbar-brand {
   text-transform: uppercase; }
 
+.uk-article-meta {
+  color: #767676;  /* required to get an accessible contrast */ }
 .uk-article-meta > a {
   color: #444; }
   .uk-article-meta > a:hover {
@@ -87,7 +89,7 @@ a {
 
 
 .mg-header {
-  background-color: #39B39D; }
+  background-color: #0c8670; }
 
 .mg-header-content {
   display: flex;
@@ -117,11 +119,16 @@ a {
   flex: 1;
   display: flex;
   justify-content: flex-end; }
+
+.mg-tag-filters {
+  list-style-type: none;
+  display: flex;
+  align-items: center; }
 .mg-tag-filter {
   background-color: transparent;
   border: 1px solid white;
   overflow: visible;
-  color: inherit;
+  color: black;
   font: inherit;
   padding: .5rem 1.5rem;
   margin: .5rem 1rem;
@@ -147,6 +154,10 @@ a {
   margin-bottom: 3em;
   min-height: 100%; }
 
+
+.mg-articles {
+  list-style-type: none; }
+
 .mg-article-short {
   display: flex;
   align-items: center;
@@ -168,7 +179,7 @@ a {
   flex: 3 1 35rem; }
 
 .mg-feed {
-  color: #FF6600; }
+  color: #bf4d00; }
   .mg-feed:hover {
     text-decoration: none;
     color: #FF6600; }
@@ -178,9 +189,8 @@ a {
   text-align: right; }
 .mg-tag {
   margin: 0 .5rem;
-  color: #FF6600; }
+  color: #c95000; }
   .mg-tag:hover {
-    text-decoration: none;
     color: #FF6600; }
   .mg-tag > .uk-icon-tag {
     display: inline; /* so that the icon stick with the tag label */
@@ -249,6 +259,17 @@ a {
   background: #ccc;
   color: #000;
   padding: 0.2em 0; }
+
+
+.mg-search {
+  display: flex; }
+.mg-search-button {
+  font-family: FontAwesome;
+  background-color: transparent;
+  border: none;
+  cursor: pointer; }
+.mg-search-query {
+  padding: 0; } /* override uk-search-field */
 
 
 .mg-tagcloud {

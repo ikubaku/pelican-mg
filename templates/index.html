@@ -3,13 +3,17 @@
 {% block content_title %}{% endblock %}
 
 {% block header_extra %}
+{% if MG_LANG_FILTER_TAGS or MG_FILTER_TAGS %}
+<ul class="mg-tag-filters">
 {% if MG_LANG_FILTER_TAGS %}
-<button class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)({{ MG_LANG_FILTER_TAGS|tojson }})'>lang</button>
+<li><button class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)({{ MG_LANG_FILTER_TAGS|tojson }})'>lang</button></li>
 {% endif %}
 {% if MG_FILTER_TAGS %}
 {% for filter_tag in MG_FILTER_TAGS %}
-<button class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')">{{ filter_tag.replace('lang:', '') }}</button>
+<li><button class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')">{{ filter_tag.replace('lang:', '') }}</button></li>
 {% endfor %}
+</ul>
+{% endif %}
 {% endif %}
 {% endblock %}
 
@@ -17,15 +21,17 @@
 <div class="uk-width-medium-4-5">
 
 {% if articles %}
+<ul class="mg-articles">
 {% for article in (articles_page.object_list if articles_page else articles) %}
-
+    <li>
     {% if not MG_NO_EXCERPT and loop.index == 1 %}
         {% include "partials/article-excerpt.html" %}
     {% else %}
         {% include "partials/article-short.html" %}
     {% endif %}
-
+    </li>
 {% endfor %}
+</ul>
 {% if DEFAULT_PAGINATION  and articles_paginator.num_pages > 1 %}
     <ul class="uk-pagination">
         {% if articles_previous_page %}<li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}"><i class="uk-icon-angle-double-left"></i></a></li>{% endif %}
