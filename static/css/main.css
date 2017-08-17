@@ -154,7 +154,7 @@ a {
   display: flex;
   align-items: center;
   flex-wrap: wrap; }
-  article:nth-child(even) > .mg-article-short {
+  li:nth-child(even) .mg-article-short {
     flex-direction: row-reverse; }
 .mg-article-image {
   flex: 1 1 15rem;
