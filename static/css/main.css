@@ -19,7 +19,7 @@ html {
   line-height: 20px; }
 
 a {
-  color: #007fae; }
+  color: #33b5e5; }
   a:hover {
     color: #33b5e5; }
 
@@ -83,7 +83,7 @@ a {
 
 
 .mg-header {
-  background-color: #0c8670; }
+  background-color: #39b39d; }
 
 .mg-header-content {
   display: flex;
@@ -117,12 +117,13 @@ a {
 .mg-tag-filters {
   list-style-type: none;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  margin: 0; }
 .mg-tag-filter {
   background-color: transparent;
   border: 2px solid white;
   overflow: visible;
-  color: white;
+  color: #444;
   font: inherit;
   padding: .5rem 1.5rem;
   margin: .5rem 1rem;
@@ -181,7 +182,7 @@ a {
   text-align: right; }
 .mg-tag {
   margin: 0 .5rem;
-  color: #c95000; }
+  color: #FF6600; }
   .mg-tag:hover {
     color: #FF6600; }
   .mg-tag > .uk-icon-tag {
@@ -202,8 +203,7 @@ a {
   margin-top: 1em; }
 
 .mg-icon-link {
-  padding: .3rem;
-  color: #444; }
+  padding: .3rem; }
 .mg-icon-link:hover {
   text-decoration: none; }
 

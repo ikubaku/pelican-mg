@@ -4,6 +4,8 @@ mg
 A minimal theme for [Pelican](http://blog.getpelican.com/) that uses uikit.
 The theme is suited for a single author blog. Feeds are provided via ATOM.
 
+This theme was developped with accessibility in mind, but may not be perfectly WCAG-compliant.
+
 
 Screenshots
 --------------
@@ -126,6 +128,12 @@ e.g.
 
 **MG_DISABLE_SUMMARY**
 If you do not manually provide a summary on your articles, set this to `True` so that that the articles summary is not included on the index / search result pages.
+
+**MG_NO_EXCERPT**
+Set this to `True`, if you do not want to display the last article in full on the index page.
+
+**MG_FILTER_TAGS** and **MG_LANG_FILTER_TAGS**
+Define those variables as list of tag names if you want to enable the tag filtering buttons.
 
 Example Configuration
 ----------------------
