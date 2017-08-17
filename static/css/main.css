@@ -122,7 +122,7 @@ a {
   background-color: transparent;
   border: 2px solid white;
   overflow: visible;
-  color: #444;
+  color: white;
   font: inherit;
   padding: .5rem 1.5rem;
   margin: .5rem 1rem;
@@ -131,9 +131,9 @@ a {
   .mg-tag-filter:hover {
     border-color: #b2b2b2;
     text-decoration: none; }
-  .mg-tag-filter-enabled {
+  .mg-tag-filter-include {
     background-color: #33b5e5; }
-  .mg-tag-filter-disabled {
+  .mg-tag-filter-exclude {
     background-color: #FF9148;  }
 
 .mg-nav-small {

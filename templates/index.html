@@ -6,11 +6,11 @@
 {% if MG_LANG_FILTER_TAGS or MG_FILTER_TAGS %}
 <ul class="mg-tag-filters">
 {% if MG_LANG_FILTER_TAGS %}
-<li><button class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)({{ MG_LANG_FILTER_TAGS|tojson }})'>lang</button></li>
+<li><button class="mg-tag-filter" onclick='toggleLangTagFilter.bind(this)({{ MG_LANG_FILTER_TAGS|tojson }})' title="Language filter (disabled)">lang</button></li>
 {% endif %}
 {% if MG_FILTER_TAGS %}
 {% for filter_tag in MG_FILTER_TAGS %}
-<li><button class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')">{{ filter_tag.replace('lang:', '') }}</button></li>
+<li><button class="mg-tag-filter" onclick="toggleTagFilter.bind(this)('{{ filter_tag }}')" title="Tag filter (disabled)">{{ filter_tag.replace('lang:', '') }}</button></li>
 {% endfor %}
 </ul>
 {% endif %}
