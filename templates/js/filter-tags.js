@@ -16,18 +16,18 @@ function includes(array, value) {
 function toggleTagFilter(tag) {
     var filterState = window.tagFilters[tag]
     if (filterState === true) {
-        this.classList.remove('mg-tag-filter-exclude');
-        filterState = false;
-        this.classList.add('mg-tag-filter-include');
-        this.title = 'Tag filter (include matching articles)';
-    } else if (filterState === false) {
         this.classList.remove('mg-tag-filter-include');
+        filterState = false;
+        this.classList.add('mg-tag-filter-exclude');
+        this.title = 'Tag filter (exclude matching articles)';
+    } else if (filterState === false) {
+        this.classList.remove('mg-tag-filter-exclude');
         filterState = undefined;
         this.title = 'Tag filter (disabled)';
     } else {
         filterState = true;
-        this.classList.add('mg-tag-filter-exclude');
-        this.title = 'Tag filter (exclude matching articles)';
+        this.classList.add('mg-tag-filter-include');
+        this.title = 'Tag filter (include matching articles)';
     }
     window.tagFilters[tag] = filterState;
     updateArticlesVisibility();
