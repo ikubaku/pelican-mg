@@ -202,6 +202,8 @@ a {
 
 .mg-icon-link {
   padding: .3rem; }
+  .mg-icon-link:hover {
+    text-decoration: none; }
 
 .mg-icons-small {
   margin-bottom: 1em; }
