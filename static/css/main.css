@@ -240,6 +240,14 @@ a {
   background-image: url(../stackoverflow-icon.png);
   background-size: contain;
   vertical-align: middle; }
+.uk-icon-travis-ci:before {
+  content: ' ';
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+  background-image: url(../travis-ci-icon.png);
+  background-size: contain;
+  vertical-align: middle; }
 
 .mg-support-logo {
   margin: .5rem;}
