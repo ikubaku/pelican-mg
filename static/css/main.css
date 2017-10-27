@@ -97,7 +97,7 @@ a {
 .mg-brand {
   font-family: "Open Sans", sans-serif;
   font-style: italic;
-  font-size: 2.5em;
+  font-size: 2.5rem;
   padding-left: 0;
   color: white; }
   .mg-brand:hover, .mg-brand:focus {
@@ -106,11 +106,12 @@ a {
     .mg-brand {
       padding: 0;
       max-width: 100%;
-      font-size: 2em; } }
+      font-size: 2rem; } }
 
 .mg-tagline {
   font-family: "Open Sans", sans-serif;
   font-weight: 800;
+  font-size: 1rem;
   color: white; }
 
 .mg-header-extra {

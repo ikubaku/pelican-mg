@@ -69,7 +69,7 @@
     <div class="mg-header-content uk-container uk-container-center">
 
         <div class="uk-hidden-small">
-            <a class="mg-brand uk-navbar-brand" href="{{ SITEURL }}">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
+            <a class="mg-brand uk-navbar-brand" href="{{ SITEURL }}">{% block header_text %}{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</a>
             <div class="mg-tagline uk-navbar-content">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</div>
         </div>
 
