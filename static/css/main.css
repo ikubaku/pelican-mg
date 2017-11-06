@@ -27,9 +27,6 @@ a {
   a:hover {
     color: #33b5e5; }
 
-.uk-navbar-brand {
-  text-transform: uppercase; }
-
 .uk-article-meta {
   color: #767676;  /* required to get an accessible contrast */ }
 .uk-article-meta > a {
@@ -98,7 +95,6 @@ a {
   font-family: "Open Sans", sans-serif;
   font-style: italic;
   font-size: 2.5rem;
-  padding-left: 0;
   color: white; }
   .mg-brand:hover, .mg-brand:focus {
     color: white; }
@@ -106,9 +102,11 @@ a {
     .mg-brand {
       padding: 0;
       max-width: 100%;
-      font-size: 2rem; } }
+      font-size: 2rem;
+      line-height: 2.5rem; } }
 
 .mg-tagline {
+  padding: 0 30px;
   font-family: "Open Sans", sans-serif;
   font-weight: 800;
   font-size: 1rem;
@@ -142,6 +140,7 @@ a {
     background-color: #FF9148;  }
 
 .mg-nav-small {
+  display: flex;
   width: 100% }
 .mg-nav-menu-toggle-small {
   flex: 1; }
@@ -313,7 +312,7 @@ a {
 
 
 /* Accessibility */
-a:focus, .uk-link:focus, .uk-navbar-brand:focus {
+a:focus, .uk-link:focus {
   outline: 1px dotted !important; /* resetting an outline - damn uikit :( */
 }
 

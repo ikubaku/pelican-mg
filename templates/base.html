@@ -69,11 +69,11 @@
     <div class="mg-header-content uk-container uk-container-center">
 
         <div class="uk-hidden-small">
-            <a class="mg-brand uk-navbar-brand" href="{{ SITEURL }}">{% block header_text %}{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</a>
-            <div class="mg-tagline uk-navbar-content">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</div>
+            <a class="mg-brand" href="{{ SITEURL }}">{% block header_text %}{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}{% endblock %}</a>
+            <div class="mg-tagline">{% if SITESUBTITLE %}{{ SITESUBTITLE }}{% endif %}</div>
         </div>
 
-        <ul class="mg-skiplinks">
+        <ul class="uk-hidden-small mg-skiplinks">
             <li><a href="#search-form">Search form</a></li>
         </ul>
 
@@ -84,7 +84,7 @@
 
         <div class="mg-nav-small uk-visible-small">
             <a class="mg-nav-menu-toggle-small uk-navbar-toggle" href="#mg-offcanvas" data-uk-offcanvas></a>
-            <a class="mg-brand uk-navbar-brand uk-navbar-center" href="{{ SITEURL }}">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
+            <a class="mg-brand uk-navbar-center" href="{{ SITEURL }}">{% if ALT_NAME %}{{ ALT_NAME }}{% else %}{{ SITENAME }}{% endif %}</a>
         </div>
 
     </div>
