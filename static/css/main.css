@@ -91,25 +91,25 @@ a {
   display: flex;
   justify-content: space-between; }
 
-.mg-brand {
-  font-family: "Open Sans", sans-serif;
+.mg-brand, .mg-brand > h1 {
+  display: block;
+  margin: .5rem 0;
   font-style: italic;
   font-size: 2.5rem;
-  color: white; }
+  line-height: 2.5rem;
+  color: #444; }
   .mg-brand:hover, .mg-brand:focus {
     color: white; }
   @media (max-width: 767px) {
     .mg-brand {
       padding: 0;
       max-width: 100%;
-      font-size: 2rem;
-      line-height: 2.5rem; } }
+      font-size: 2rem; }
+  }
 
 .mg-tagline {
-  padding: 0 30px;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 800;
-  font-size: 1rem;
+  padding: .5rem 2rem;
+  font-size: 1.4rem;
   color: white; }
 
 .mg-header-extra {
