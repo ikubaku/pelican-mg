@@ -149,6 +149,7 @@
             <div class="uk-panel uk-panel-box">
                 <h3 class="uk-panel-title">Receive Updates</h3>
                 <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> ATOM</a>
+                {% if EXTRA_ATOM_FEED %}<a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> {{ EXTRA_ATOM_FEED['name'] }}</a>{% endif %}
             </div>
 
             {% if LINKS %}
@@ -185,6 +186,7 @@
 
         <ul class="mg-icons-small uk-subnav uk-visible-small">
             <li><a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="uk-icon-button uk-icon-rss"></a></li>
+            {% if EXTRA_ATOM_FEED %}<li><a rel="alternate" type="application/atom+xml" href="{{ EXTRA_ATOM_FEED['url'] }}" class="uk-icon-button uk-icon-rss"></a></li>{% endif %}
             {% if SOCIAL %}
             {% for link_destination, link in SOCIAL %}
             <li>
