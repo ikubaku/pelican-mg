@@ -126,6 +126,12 @@ e.g.
               ('envelope', 'mailto:luca92web@gmail.com'),)
 ```
 
+**SUPPORTS**
+An optional list of tuples (img_alt, url, logo_url, title)
+
+**ISSO_BASE_URL**
+An optional URL to an [isso](https://posativ.org/isso/) endpoint (serving `/js/embed.dev.js`).
+
 **MG_DISABLE_SUMMARY**
 If you do not manually provide a summary on your articles, set this to `True` so that that the articles summary is not included on the index / search result pages.
 
@@ -134,6 +140,9 @@ Set this to `True`, if you do not want to display the last article in full on th
 
 **MG_FILTER_TAGS** and **MG_LANG_FILTER_TAGS**
 Define those variables as list of tag names if you want to enable the tag filtering buttons.
+
+**EXTRA_ATOM_FEED**
+An extra URL providing an Atom feed of updates that you want inserted along the blog Atom feed.
 
 Example Configuration
 ----------------------
