@@ -129,6 +129,9 @@ e.g.
 **SUPPORTS**
 An optional list of tuples (img_alt, url, logo_url, title)
 
+**READINGS**
+An optional list of `dict`, with `img_url` & `description` fields, of books you read, from most recent to oldest.
+
 **ISSO_BASE_URL**
 An optional URL to an [isso](https://posativ.org/isso/) endpoint (serving `/js/embed.dev.js`).
 
