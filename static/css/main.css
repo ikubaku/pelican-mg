@@ -177,16 +177,16 @@ a {
 .mg-feed {
   color: #bf4d00; }
   .mg-feed:hover {
-    color: #FF6600; }
+    color: #D14905; }
 
 .mg-tags {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   text-align: right; }
 .mg-tag {
   margin: 0 .5rem;
-  color: #FF6600; }
+  color: #D14905; }
   .mg-tag:hover {
-    color: #FF6600; }
+    color: #D14905; }
   .mg-tag > .uk-icon-tag {
     display: inline; /* so that the icon stick with the tag label */
     margin-right: .2rem; }
@@ -214,7 +214,7 @@ a {
 
 .mg-icons-small .uk-icon-rss {
   color: white;
-  background-color: #FF6600; }
+  background-color: #D14905; }
 .mg-icons-small .uk-icon-twitter {
   background-color: #00B0ED; }
 .mg-icons-small .uk-icon-facebook {
@@ -297,7 +297,7 @@ a {
   font-size: 300%; }
 
 .mg-cloud-tag-badge {
-  color: #FF6600; }
+  color: #D14905; }
 
 
 .mg-fadeable {
