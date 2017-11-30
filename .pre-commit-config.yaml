@@ -33,7 +33,8 @@
         exclude: ^templates/(index|tipue_search)\.html$
 -   repo: local
     hooks:
-    -   id: make-eslint
+    -   id: eslint
+        name: eslint
         language: system
         entry: make eslint
         files: ''

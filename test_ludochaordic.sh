@@ -3,6 +3,7 @@ set -o pipefail -o errexit -o nounset -o xtrace
 
 cd ..
 git clone https://github.com/getpelican/pelican-plugins.git
+cd pelican-plugins
 git submodule update --init image_process representative_image tag_cloud
 
 cd ..
