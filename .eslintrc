@@ -1,0 +1,11 @@
+{
+    "extends": ["strict"],
+    "globals": {
+        "document": false,
+        "window": false,
+        "$": false
+    },
+    "rules": {
+        "no-undefined": 0
+    }
+}

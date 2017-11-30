@@ -1,5 +1,7 @@
-mg
-==============
+pelican-mg
+==========
+
+[![Build Status](https://travis-ci.org/Lucas-C/pelican-mg.svg?branch=master)](https://travis-ci.org/Lucas-C/pelican-mg)
 
 A minimal theme for [Pelican](http://blog.getpelican.com/) that uses uikit.
 The theme is suited for a single author blog. Feeds are provided via ATOM.

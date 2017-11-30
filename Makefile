@@ -1,19 +1,17 @@
 # BEWARE ! Makefiles require the use of hard tabs
 
-NODE_BIN := node_modules/.bin
-
-.PHONY: install check test
+.PHONY: install check lint test
 
 install:
-	npm install csslint eslint eslint-config-strict eslint-plugin-filenames htmlhint htmllint-cli jscs
+	npm install -g csslint eslint eslint-config-strict eslint-plugin-filenames htmlhint htmllint-cli lighthouse
 	pip install pre-commit
 	pre-commit install
 
-check:
-	$(NODE_BIN)/eslint $(git ls-files [ grep '\.js$')
-	$(NODE_BIN)/jscs $(git ls-files [ grep '\.js$')
-	$(NODE_BIN)/csslint --ignore=order-alphabetical $(git ls-files [ grep '\.css$')
+check: eslint
 	pre-commit run --all-files
+
+eslint:
+	eslint templates/js/*.js
 
 test:
 	./test_ludochaordic.sh
