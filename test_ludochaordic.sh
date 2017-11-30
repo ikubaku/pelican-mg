@@ -11,7 +11,7 @@ git clone https://github.com/Lucas-C/ludochaordic.git
 cd ludochaordic
 
 pip install pelican markdown beautifulsoup4 pillow
-make DEBUG=1 OUTPUTDIR=output devserver
+make DEBUG=1 OUTPUTDIR=output html
 
 csslint --ignore=order-alphabetical output/theme/css/main.css
 
