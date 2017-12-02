@@ -9,12 +9,11 @@
     sha: v1.1.4
     hooks:
     -   id: remove-crlf
-        exclude: npp/.*\.xml
     -   id: remove-tabs
 -   repo: local
     hooks:
     -   id: eslint
         name: eslint
         language: system
-        entry: make eslint
+        entry: sh -c 'eslint templates/js/*.js'
         files: ''

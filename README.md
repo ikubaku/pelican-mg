@@ -46,7 +46,7 @@ Features
 * Analytics with Google Analytics, PIWIK and StatCounter.
 * Share buttons built with share urls.
 * Custom footer notice.
-* W3C-Validatated HTML
+* W3C-Validated HTML
 
 Install
 -------

@@ -1,6 +1,6 @@
 language: python
 python: 3.5
-install: make install
+install: ./run.sh install
 script:
-  - make check
-  - make test
+  - pre-commit run --all-files
+  - ./run.sh test_ludochaordic
