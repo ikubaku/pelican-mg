@@ -20,7 +20,7 @@ test_ludochaordic () {
     git clone https://github.com/Lucas-C/ludochaordic.git
     cd ludochaordic
 
-    npm install -g csslint htmlhint lighthouse
+    npm install -g csslint htmlhint
     pip install pelican markdown beautifulsoup4 pillow html5lib html5validator
 
     ../pelican-mg/gen_imgs_from_mds.py content/*.md
@@ -30,12 +30,8 @@ test_ludochaordic () {
 
     html5validator --root output/ \
         --ignore='Element "style" not allowed as child of element "div" in this context.'
-    cp .htmlhintrc output/
+    cp ../pelican-mg/.htmlhintrc output/
     htmlhint output/
-
-    make devserver
-    lighthouse http://localhost:8000
-    make stopserver
 }
 
 eval "$1"
