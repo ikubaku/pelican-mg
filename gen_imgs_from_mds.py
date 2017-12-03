@@ -24,16 +24,17 @@ for md_file_path in sys.argv[1:]:
         img_url = img.attrib['src']
         if img_url.startswith('http'):
             continue
-        gen_img('content/' + img_url)
-    # Adding also images from "Image:" metadata entries
+        gen_img(os.path.join('content', img_url))
+    # Adding also images from "Image:" pelican metadata entries
     for line in md_content.splitlines()[:6]:
         if not line.startswith('Image: '):
             continue
-        gen_img('content/' + line.replace('Image: ', '').strip())
+        gen_img(os.path.join('content', line.replace('Image: ', '').strip()))
 
 if not sys.argv[1:]:
     print('Checking that pelican plugin image_process.scale works OK on those imgs')
     from PIL import Image
+    sys.path.append('../pelican-plugins/image_process/')
     from image_process import scale
     for ext, content in sorted(SMALLEST.items()):
         print('- Testing {} img'.format(ext))

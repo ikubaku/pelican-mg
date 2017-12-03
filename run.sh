@@ -20,20 +20,21 @@ test_ludochaordic () {
     git clone https://github.com/Lucas-C/ludochaordic.git
     cd ludochaordic
 
-    npm install -g csslint htmlhint htmllint-cli lighthouse
+    npm install -g csslint htmlhint lighthouse
     pip install pelican markdown beautifulsoup4 pillow html5lib html5validator
 
     ../pelican-mg/gen_imgs_from_mds.py content/*.md
     make DEBUG=1 OUTPUTDIR=output html
 
-    csslint --ignore=order-alphabetical output/theme/css/main.css
+    csslint --ignore=bulletproof-font-face,fallback-colors,order-alphabetical output/theme/css/main.css
 
-    html5validator --root output/
+    html5validator --root output/ \
+        --ignore='Element "style" not allowed as child of element "div" in this context.'
+    cp .htmlhintrc output/
     htmlhint output/
-    htmllint output/
 
     make devserver
-    lighthouse http://localhost:
+    lighthouse http://localhost:8000
     make stopserver
 }
 
