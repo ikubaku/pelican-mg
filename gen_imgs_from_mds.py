@@ -16,6 +16,9 @@ for md_file_path in sys.argv[1:]:
         img_url = img.attrib['src']
         if img_url.startswith('http'):
             continue
+        img_url = 'content/' + img_url
+        if os.path.exists(img_url):
+            continue
         os.makedirs(os.path.dirname(img_url), exist_ok=True)
         ext = img_url.split('.')[-1].lower()
         with open(img_url, 'wb') as img_file:
