@@ -21,7 +21,7 @@ test_ludochaordic () {
     cd ludochaordic
 
     pip install pelican markdown beautifulsoup4 pillow html5lib
-    ../gen_imgs_from_mds.py *.md
+    ../pelican-mg/gen_imgs_from_mds.py content/*.md
     make DEBUG=1 OUTPUTDIR=output html
 
     csslint --ignore=order-alphabetical output/theme/css/main.css
