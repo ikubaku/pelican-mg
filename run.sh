@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# USAGE: ./run.sh ( install | test_ludochaordicn )
+# USAGE: ./run.sh ( install | test_ludochaordic )
 
 set -o pipefail -o errexit -o nounset -o xtrace
 
 install () {
-    npm install -g csslint eslint eslint-config-strict eslint-plugin-filenames htmlhint htmllint-cli lighthouse
-    pip install html5validator pre-commit
+    npm install -g eslint eslint-config-strict eslint-plugin-filenames
+    pip install pre-commit
     pre-commit install
 }
 
@@ -20,7 +20,9 @@ test_ludochaordic () {
     git clone https://github.com/Lucas-C/ludochaordic.git
     cd ludochaordic
 
-    pip install pelican markdown beautifulsoup4 pillow html5lib
+    npm install -g csslint htmlhint htmllint-cli lighthouse
+    pip install pelican markdown beautifulsoup4 pillow html5lib html5validator
+
     ../pelican-mg/gen_imgs_from_mds.py content/*.md
     make DEBUG=1 OUTPUTDIR=output html
 
