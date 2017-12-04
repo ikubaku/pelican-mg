@@ -2,7 +2,7 @@
          data-tags='{{ article.tags|map(attribute="name")|list|tojson }}'>
     <div class="mg-article-short">
         {% if article.featured_image %}
-        <img class="mg-article-image image-process-thumb" src="{{ article.featured_image }}" alt="">
+        <div class="lazyload" data-noscript=""><noscript><img src="{{ article.featured_image }}" alt=""></noscript></div>
         {% endif %}
         <div class="mg-article-content">
             <a href="{{ SITEURL }}/{{ article.url }}" class="uk-link-muted"><h2 class="uk-article-title" itemprop="name">{{ article.title|e }}</h2></a>

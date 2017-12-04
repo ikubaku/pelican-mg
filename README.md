@@ -52,7 +52,7 @@ Install
 -------
 This template uses the [representative_image](https://github.com/getpelican/pelican-plugins/tree/master/representative_image) and [image_process](https://github.com/getpelican/pelican-plugins/tree/master/image_process) plugins, so you will need to:
 
-    pip install beautifulsoup4 pillow
+    ./run.sh install && ./run.sh dev_install
 
 
 Settings

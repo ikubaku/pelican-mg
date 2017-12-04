@@ -5,6 +5,11 @@
 set -o pipefail -o errexit -o nounset -o xtrace
 
 install () {
+    pip install pelican markdown beautifulsoup4 pillow
+    ./gen_statics_bundles.py
+}
+
+install_dev () {
     npm install -g eslint eslint-config-strict eslint-plugin-filenames
     pip install pre-commit
     pre-commit install
@@ -21,7 +26,7 @@ test_ludochaordic () {
     cd ludochaordic
 
     npm install -g csslint htmlhint
-    pip install pelican markdown beautifulsoup4 pillow html5lib html5validator
+    pip install html5lib html5validator
 
     ../pelican-mg/gen_imgs_from_mds.py content/*.md
     make DEBUG=1 OUTPUTDIR=output html

@@ -1,6 +1,8 @@
 language: python
 python: 3.5
-install: ./run.sh install
+install:
+  - ./run.sh install
+  - ./run.sh install_dev
 script:
   - pre-commit run --all-files
   - ./run.sh test_ludochaordic

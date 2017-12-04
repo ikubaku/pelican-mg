@@ -52,13 +52,7 @@
     {% endif %}
     {% endblock %}
 
-    <link href='{{ SITEURL }}/theme/css/uikit-2.27.4.min.css' rel='stylesheet' type='text/css'>
-    {% if not DISABLE_SEARCH %}
-    <link href='{{ SITEURL }}/theme/css/uikit-2.27.4-search.min.css' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/tipuesearch.css">
-    {% endif %}
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/solarized-highlight.css">
-    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css">
+    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-DISABLE_SEARCH-{{DISABLE_SEARCH|string|first|length|string|first}}-SHORTSHA1-cf29250.css">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -265,31 +259,7 @@
     </div>
 </aside>
 
-<script src="{{ SITEURL }}/theme/js/html5shiv-3.7.2.min.js"></script>
-<script src="{{ SITEURL }}/theme/js/jquery-1.10.2.min.js"></script>
-<script src="{{ SITEURL }}/theme/js/uikit-2.27.4.min.js"></script>
-
-{% if not DISABLE_SEARCH %}
-<script src="{{ SITEURL }}/theme/js/uikit-2.27.4-search.min.js"></script>
-<script src="{{ SITEURL }}/theme/js/tipuesearch_set.js"></script>
-<script src="{{ SITEURL }}/theme/js/tipuesearch.js"></script>
-<script>
-{% include 'js/enable-search.js' %}
-</script>
-{% endif %}
-
-{% if SHARE %}
-<script src="{{ SITEURL }}/theme/js/jquery.sticky-kit.js"></script>
-<script>
-{% include 'js/social.js' %}
-</script>
-{% endif %}
-
-{% if MG_FILTER_TAGS %}
-<script>
-{% include 'js/filter-tags.js' %}
-</script>
-{% endif %}
+<script src="{{SITEURL}}/theme/bundle-DISABLE_SEARCH-{{DISABLE_SEARCH|string|first|length|string|first}}-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-e15c693.js"></script>
 
 {% include 'disqus_count.html' %}
 {% include 'analytics.html' %}

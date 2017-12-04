@@ -161,7 +161,9 @@ a {
   flex-wrap: wrap; }
   li:nth-child(even) .mg-article-short {
     flex-direction: row-reverse; }
-.mg-article-image {
+.mg-article-short .lazyload,
+.mg-article-short .lazyloading,
+.mg-article-short .lazyloaded {
   flex: 1 1 15rem;
   min-height: 0; /* required for flexbox shrink to work properly - Chrome 60 */
   min-width: 0; /* required for flexbox shrink to work properly - Chrome 60 */
