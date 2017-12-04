@@ -4,7 +4,7 @@
     -   id: check-merge-conflict
     -   id: trailing-whitespace
         args: [--no-markdown-linebreak-ext]
-        exclude: ^static/(css|js)
+        exclude: ^static/(csslibs/|jslibs/|bundle-)
 -   repo: git://github.com/Lucas-C/pre-commit-hooks
     sha: v1.1.4
     hooks:
