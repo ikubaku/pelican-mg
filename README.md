@@ -47,6 +47,7 @@ Features
 * Share buttons built with share urls.
 * Custom footer notice.
 * W3C-Validated HTML
+* Home page images lazy-loading
 
 Install
 -------
@@ -78,7 +79,7 @@ If you want to use mg with search disabled.
     DISABLE_SEARCH = True
 ```
 
-###Optional settings
+### Optional settings
 
 **ALT_NAME**
 An alternative name for your site. It appears in the header bar.
