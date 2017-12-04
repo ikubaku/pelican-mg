@@ -16,7 +16,7 @@ def sed(filepath, pattern, value):
 
 
 # Generating CSS bundle
-short_hash = sha1(cat('static/css/main.css')).hexdigest()[:7]
+short_hash = sha1(cat('static/main.css')).hexdigest()[:7]
 sed('templates/base.html', '-SHORTSHA1-[a-z0-9]+.css', '-SHORTSHA1-{}.css'.format(short_hash))
 for DISABLE_SEARCH in range(2):
     bundle = b''
@@ -25,7 +25,7 @@ for DISABLE_SEARCH in range(2):
         bundle += cat('static/csslibs/uikit-2.27.4-search.min.css')
         bundle += cat('static/csslibs/tipuesearch.css')
     bundle += cat('static/csslibs/solarized-highlight.css')
-    bundle += cat('static/css/main.css')
+    bundle += cat('static/main.css')
     bundle_filename = 'bundle-DISABLE_SEARCH-{}-SHORTSHA1-{}.css'.format(DISABLE_SEARCH, short_hash)
     with open('static/' + bundle_filename, 'wb') as bundle_file:
         bundle_file.write(bundle)
