@@ -10,7 +10,8 @@ install () {
 }
 
 install_dev () {
-    npm install -g eslint eslint-config-strict eslint-plugin-filenames
+    npm install -g eslint eslint-config-strict eslint-plugin-filenames stylelint
+    npm install stylelint-config-standard
     pip install pre-commit
     pre-commit install
 }
@@ -25,16 +26,15 @@ test_ludochaordic () {
     git clone https://github.com/Lucas-C/ludochaordic.git
     cd ludochaordic
 
-    npm install -g csslint htmlhint
+    npm install -g htmlhint
     pip install html5lib html5validator
 
     ../pelican-mg/gen_imgs_from_mds.py content/*.md
     make DEBUG=1 OUTPUTDIR=output html
 
-    csslint --ignore=bulletproof-font-face,fallback-colors,order-alphabetical output/theme/css/main.css
-
     html5validator --root output/ \
         --ignore='Element "style" not allowed as child of element "div" in this context.'
+
     cp ../pelican-mg/.htmlhintrc output/
     htmlhint output/
 }

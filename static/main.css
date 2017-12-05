@@ -1,9 +1,11 @@
+/* csslint warned: Too many font-size declarations (10), abstraction needed. */
 @font-face {
   font-family: 'Open Sans';
   font-style: italic;
   font-weight: 800;
   src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'), url(fonts/PRmiXeptR36kaC0GEAetxlDMrAYtoOisqqMDW9M_Mqc.ttf) format('truetype');
 }
+
 @font-face {
   font-family: 'Oswald';
   font-style: normal;
@@ -12,7 +14,7 @@
 }
 
 html, h1, h2, h3 {
-  font-family: "Oswald", "Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font-family: "Oswald", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 html {
   font-weight: 400;
   font-size: 14px;
@@ -37,22 +39,22 @@ a {
   color: #444; }
 
 .uk-article-content {
-  font: 400 14px / 20px "Helvetica Neue",Helvetica,Arial,sans-serif; }
+  font: 400 14px / 20px "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .uk-icon-twitter {
-  color: #00B0ED; }
+  color: #00b0ed; }
 
 .uk-icon-facebook, .uk-icon-facebook-square {
-  color: #3B5999; }
+  color: #3b5999; }
 
 .uk-icon-google-plus, .uk-icon-google-plus-square {
-  color: #D34836; }
+  color: #d34836; }
 
 .uk-nav-side > li.uk-active > a {
-  background: #28D1B2; }
+  background: #28d1b2; }
 
 .uk-pagination > .uk-active > span {
-  background: #28D1B2; }
+  background: #28d1b2; }
 
 .uk-icon-medium {
   margin-right: 0.3em; }
@@ -94,7 +96,7 @@ a {
 
 .mg-brand, .mg-brand > h1 {
   display: block;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
   font-style: italic;
   font-size: 2.5rem;
   line-height: 2.5rem;
@@ -109,7 +111,7 @@ a {
   }
 
 .mg-tagline {
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   font-size: 1.4rem;
   color: white; }
 
@@ -129,8 +131,8 @@ a {
   overflow: visible;
   color: #444;
   font: inherit;
-  padding: .5rem 1.5rem;
-  margin: .5rem 1rem;
+  padding: 0.5rem 1.5rem;
+  margin: 0.5rem 1rem;
   text-transform: uppercase;
   cursor: pointer; }
   .mg-tag-filter:hover {
@@ -138,11 +140,11 @@ a {
   .mg-tag-filter-include {
     background-color: #33b5e5; }
   .mg-tag-filter-exclude {
-    background-color: #FF9148;  }
+    background-color: #ff9148;  }
 
 .mg-nav-small {
   display: flex;
-  width: 100% }
+  width: 100%; }
 .mg-nav-menu-toggle-small {
   flex: 1; }
 
@@ -169,7 +171,7 @@ a {
   min-width: 0; /* required for flexbox shrink to work properly - Chrome 60 */
   max-height: 50%;
   max-width: 50%;
-  padding: 1rem; /* csslint allow: box-model */
+  padding: 1rem; /* csslint warned here on box model */
   margin: 0 auto;
   width: 100%;
   height: 100%;
@@ -180,19 +182,19 @@ a {
 .mg-feed {
   color: #bf4d00; }
   .mg-feed:hover {
-    color: #D14905; }
+    color: #d14905; }
 
 .mg-tags {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-align: right; }
 .mg-tag {
-  margin: 0 .5rem;
-  color: #D14905; }
+  margin: 0 0.5rem;
+  color: #d14905; }
   .mg-tag:hover {
-    color: #D14905; }
+    color: #d14905; }
   .mg-tag > .uk-icon-tag {
     display: inline; /* so that the icon stick with the tag label */
-    margin-right: .2rem; }
+    margin-right: 0.2rem; }
 
 .mg-list-title {
   font-size: 2em;
@@ -208,7 +210,7 @@ a {
   margin-top: 1em; }
 
 .mg-icon-link {
-  padding: .3rem; }
+  padding: 0.3rem; }
   .mg-icon-link:hover {
     text-decoration: none; }
 
@@ -217,17 +219,17 @@ a {
 
 .mg-icons-small .uk-icon-rss {
   color: white;
-  background-color: #D14905; }
+  background-color: #d14905; }
 .mg-icons-small .uk-icon-twitter {
-  background-color: #00B0ED; }
+  background-color: #00b0ed; }
 .mg-icons-small .uk-icon-facebook {
-  background-color: #3B5999; }
+  background-color: #3b5999; }
 .mg-icons-small .uk-icon-google-plus {
-  background-color: #D34836; }
+  background-color: #d34836; }
 .mg-icons-small .uk-icon-envelope {
   background-color: #059; }
 
-.uk-icon-shaarli:before {
+.uk-icon-shaarli::before {
   content: ' ';
   display: inline-block;
   height: 28px;
@@ -235,7 +237,7 @@ a {
   background-image: url(shaarli-icon.png);
   background-size: contain;
   vertical-align: middle; }
-.uk-icon-stackoverflow:before {
+.uk-icon-stackoverflow::before {
   content: ' ';
   display: inline-block;
   height: 28px;
@@ -243,7 +245,7 @@ a {
   background-image: url(stackoverflow-icon.png);
   background-size: contain;
   vertical-align: middle; }
-.uk-icon-travis-ci:before {
+.uk-icon-travis-ci::before {
   content: ' ';
   display: inline-block;
   height: 28px;
@@ -253,7 +255,7 @@ a {
   vertical-align: middle; }
 
 .mg-support-logo {
-  margin: .5rem;}
+  margin: 0.5rem;}
 
 .mg-badges li {
   float: left;
@@ -269,7 +271,7 @@ a {
 .mg-search {
   display: flex; }
 .mg-search-button {
-  font-family: FontAwesome;
+  font-family: FontAwesome, serif;
   background-color: transparent;
   border: none;
   cursor: pointer; }
@@ -285,7 +287,7 @@ a {
 
 .mg-cloud-tag {
   display: inline-block;
-  padding: .2rem;
+  padding: 0.2rem;
   line-height: 110%; }
 
 .mg-cloud-tag-size-5 {
@@ -300,7 +302,7 @@ a {
   font-size: 300%; }
 
 .mg-cloud-tag-badge {
-  color: #D14905; }
+  color: #d14905; }
 
 
 .mg-fadeable {
