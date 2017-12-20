@@ -25,6 +25,8 @@
     <meta name="description" content="{% block description %}{{ DESCRIPTION }}{% endblock %}">
     {% if FAVICON %}<link rel="shortcut icon" href="{{ SITEURL }}/{{ FAVICON }}" type="{{ FAVICON_TYPE|default('image/x-icon') }}">{% endif %}
     <link href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed">
+    {% block meta %}
+    {% endblock %}
 
     <meta name="author" content="{{ AUTHOR }}">
     <meta name="copyright" content="{{ AUTHOR }}">
