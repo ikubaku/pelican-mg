@@ -52,7 +52,7 @@
     {% endif %}
     {% endblock %}
 
-    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-DISABLE_SEARCH-{{DISABLE_SEARCH|string|first|length|string|first}}-SHORTSHA1-39aab30.css">
+    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-b785cd8.css">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -69,7 +69,9 @@
         </div>
 
         <ul class="uk-hidden-small mg-skiplinks">
+            {% if not DISABLE_SEARCH %}
             <li><a href="#search-form">Search form</a></li>
+            {% endif %}
         </ul>
 
         <div class="mg-header-extra uk-hidden-small">
@@ -146,12 +148,7 @@
             </div>
 
             {% if not DISABLE_SEARCH %}
-            <div class="uk-panel uk-panel-box">
-                <form id="search-form" role="search" title="Search form" class="mg-search" action="{{ SITEURL }}/search.html" data-uk-search>
-                    <input type="submit" title="Submit search terms" class="mg-search-button" value="&#xf002;">
-                    <input type="search" title="words" placeholder="words" name="q" class="mg-search-query uk-search-field tipue_search" autocomplete="off">
-                </form>
-            </div>
+            <iframe src="https://duckduckgo.com/search.html?site={{ SITEURL }}&prefill=Search" class="duckduckgo" frameborder="0"></iframe>
             {% endif %}
 
             {% if LINKS %}
@@ -211,10 +208,7 @@
     <div class="uk-offcanvas-bar">
 
         {% if not DISABLE_SEARCH %}
-        <form role="search" title="Search form" class="mg-search" action="{{ SITEURL }}/search.html" data-uk-search>
-            <input type="submit" title="Submit search terms" class="mg-search-button" value="&#xf002;">
-            <input type="search" title="words" placeholder="words" name="content" class="mg-search-query uk-search-field tipue_search" autocomplete="off">
-        </form>
+        <iframe src="https://duckduckgo.com/search.html?site={{ SITEURL }}&prefill=Search" class="duckduckgo" frameborder="0"></iframe>
         {% endif %}
 
         <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
@@ -259,10 +253,9 @@
     </div>
 </aside>
 
-<script src="{{SITEURL}}/theme/bundle-DISABLE_SEARCH-{{DISABLE_SEARCH|string|first|length|string|first}}-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-9eba27f.js"></script>
+<script src="{{SITEURL}}/theme/bundle-SHARE-{{SHARE|string|first|length|string|first}}-MG_FILTER_TAGS-{{MG_FILTER_TAGS|string|first|length|string|first}}-SHORTSHA1-004a392.js"></script>
 
 {% include 'disqus_count.html' %}
 {% include 'analytics.html' %}
 </body>
 </html>
-

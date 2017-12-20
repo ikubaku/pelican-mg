@@ -39,7 +39,7 @@ Features
 * [Open Graph](http://ogp.me) support.
 * [Twitter Summary Card](https://dev.twitter.com/cards/types/summary) support.
 * [Schema.org](http://schema.org) support.
-* Search with [Tipue Search](http://www.tipue.com/search).
+* Search with [DuckDuckGo](https://duckduckgo.com/search_box).
 * Responsive design.
 * Comment with DISQUS or inno
 * SCSS style sheets.
@@ -66,8 +66,7 @@ If you want to use the theme with search enabled (and probably you want it).
 ```python
     TAG_SAVE_AS = ''
     AUTHOR_SAVE_AS = ''
-    DIRECT_TEMPLATES = ('index', 'categories', 'archives', 'search', 'tipue_search')
-    TIPUE_SEARCH_SAVE_AS = 'tipue_search.json'
+    DIRECT_TEMPLATES = ('index', 'categories', 'archives')
 ```
 
 If you want to use mg with search disabled.
@@ -200,8 +199,7 @@ This is the settings file for Dev's Bytes.
     TAG_SAVE_AS = ''
     AUTHOR_SAVE_AS = ''
     PLUGINS = ['representative_image']
-    DIRECT_TEMPLATES = ('index', 'categories', 'archives', 'search', 'tipue_search')
-    TIPUE_SEARCH_SAVE_AS = 'tipue_search.json'
+    DIRECT_TEMPLATES = ('index', 'categories', 'archives')
 
     RELATIVE_URLS = False
 

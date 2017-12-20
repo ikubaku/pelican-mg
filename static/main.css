@@ -330,3 +330,10 @@ a:focus, .uk-link:focus {
 .mg-skiplinks a:focus {
   color: white;
 }
+
+.duckduckgo {
+  height: 40px;
+  width: 90%;
+  padding: 5%;
+  background: #f5f5f5;
+}
