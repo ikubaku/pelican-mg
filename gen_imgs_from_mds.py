@@ -15,30 +15,39 @@ def gen_img(img_url):
     with open(img_url, 'wb') as img_file:
         img_file.write(SMALLEST[ext])
 
-for md_file_path in sys.argv[1:]:
-    with open(md_file_path) as md_file:
-        md_content = md_file.read()
-    html = markdown(md_content)
-    doc_root = html5lib.parse(html)
-    for img in doc_root.iter('{http://www.w3.org/1999/xhtml}img'):
-        img_url = img.attrib['src']
-        if img_url.startswith('http'):
-            continue
-        gen_img(os.path.join('content', img_url))
-    # Adding also images from "Image:" pelican metadata entries
-    for line in md_content.splitlines()[:6]:
-        if not line.startswith('Image: '):
-            continue
-        gen_img(os.path.join('content', line.replace('Image: ', '').strip()))
+def enumerate_imgs(md_file_paths):
+    for md_file_path in md_file_paths:
+        with open(md_file_path) as md_file:
+            md_content = md_file.read()
+        html = markdown(md_content)
+        doc_root = html5lib.parse(html)
+        for img in doc_root.iter('{http://www.w3.org/1999/xhtml}img'):
+            img_url = img.attrib['src']
+            if img_url.startswith('http'):
+                continue
+            yield os.path.join('content', img_url)
+        # Adding also images from "Image:" pelican metadata entries
+        for line in md_content.splitlines()[:6]:
+            if not line.startswith('Image: '):
+                continue
+            yield os.path.join('content', line.replace('Image: ', '').strip())
 
-if not sys.argv[1:]:
-    print('Checking that pelican plugin image_process.scale works OK on those imgs')
-    from PIL import Image
-    sys.path.append('../pelican-plugins/image_process/')
-    from image_process import scale
-    for ext, content in sorted(SMALLEST.items()):
-        print('- Testing {} img'.format(ext))
-        small_img_filename = 'img.{}'.format(ext)
-        with open(small_img_filename, 'wb') as small_img:
-            small_img.write(content)
-        scale(Image.open(small_img_filename), '300', '300', False, False)  # raise an exception if img.getbbox() returns None
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        if len(sys.argv) > 2 and sys.argv[1] == '--list':
+            for img_path in enumerate_imgs(sys.argv[2:]):
+                print(img_path)
+        else:
+            for img_path in enumerate_imgs(sys.argv[1:]):
+                gen_img(img_path)
+    else:
+        print('Checking that pelican plugin image_process.scale works OK on those imgs')
+        from PIL import Image
+        sys.path.append('../pelican-plugins/image_process/')
+        from image_process import scale
+        for ext, content in sorted(SMALLEST.items()):
+            print('- Testing {} img'.format(ext))
+            small_img_filename = 'img.{}'.format(ext)
+            with open(small_img_filename, 'wb') as small_img:
+                small_img.write(content)
+            scale(Image.open(small_img_filename), '300', '300', False, False)  # raise an exception if img.getbbox() returns None
