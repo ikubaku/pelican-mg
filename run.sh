@@ -33,6 +33,7 @@ test_ludochaordic () {
     make DEBUG=1 OUTPUTDIR=output html
 
     html5validator --root output/ \
+        --ignore='Element "style" not allowed as child of element "section" in this context.' \
         --ignore='Element "style" not allowed as child of element "div" in this context.'
 
     cp ../pelican-mg/.htmlhintrc output/
