@@ -30,7 +30,7 @@ test_ludochaordic () {
     pip install html5lib html5validator
 
     ../pelican-mg/gen_imgs_from_mds.py content/*.md
-    make DEBUG=1 OUTPUTDIR=output html
+    make DEBUG=1 OUTPUTDIR=output publish
 
     html5validator --root output/ \
         --ignore-re='Element "style" not allowed as child of element'
