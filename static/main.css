@@ -304,6 +304,12 @@ a {
 .mg-cloud-tag-badge {
   color: #d14905; }
 
+img.mg-avatar {
+  display: inline-block;
+  max-width: 48%;
+  padding: .3rem;
+}
+
 
 .mg-fadeable {
   max-height: 100vh;

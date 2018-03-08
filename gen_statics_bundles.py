@@ -15,7 +15,7 @@ def sed(filepath, pattern, value):
         f.truncate()
 
 
-# Generating CSS bundle
+print('Generating CSS bundle')
 short_hash = sha1(cat('static/main.css')).hexdigest()[:7]
 sed('templates/base.html', '-SHORTSHA1-[a-z0-9]+.css', '-SHORTSHA1-{}.css'.format(short_hash))
 bundle_filename = 'bundle-SHORTSHA1-{}.css'.format(short_hash)
@@ -24,7 +24,7 @@ with open('static/' + bundle_filename, 'wb') as bundle:
     bundle.write(cat('static/csslibs/solarized-highlight.css'))
     bundle.write(cat('static/main.css'))
 
-# Generating JS bundle
+print('Generating JS bundle')
 short_hash = sha1(cat('static/js/social.js') + cat('static/js/filter-tags.js')).hexdigest()[:7]
 sed('templates/base.html', '-SHORTSHA1-[a-z0-9]+.js', '-SHORTSHA1-{}.js'.format(short_hash))
 for SHARE, MG_FILTER_TAGS in itertools.product(range(2), repeat=2):
@@ -41,3 +41,4 @@ for SHARE, MG_FILTER_TAGS in itertools.product(range(2), repeat=2):
             bundle.write(cat('static/js/social.js'))
         if MG_FILTER_TAGS:
             bundle.write(cat('static/js/filter-tags.js'))
+
