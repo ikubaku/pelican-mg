@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Lectures passées{% endblock %}
+{% block description %}{% endblock %}
+
+{% block content %}
+<div class="uk-width-medium-4-5">
+    <h1 class="uk-heading-large">Lectures passées</h1>
+
+    <div class="uk-grid">
+    {% for reading in READINGS %}
+        <figure class="uk-width-1-1 uk-width-small-1-2 uk-width-medium-1-3">
+            <img class="uk-thumbnail" src="{{ reading['img_url'] }}" alt="{{ reading['description'] }}">
+            <figcaption>{{ reading['description'] }}</figcaption>
+        </figure>
+    {% endfor %}
+    </div>
+
+</div>
+{% endblock %}

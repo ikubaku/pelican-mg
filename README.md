@@ -66,7 +66,7 @@ If you want to use the theme with search enabled (and probably you want it).
 ```python
     TAG_SAVE_AS = ''
     AUTHOR_SAVE_AS = ''
-    DIRECT_TEMPLATES = ('index', 'categories', 'archives')
+    DIRECT_TEMPLATES = ('index', 'categories', 'archives', 'past_readings')
 ```
 
 If you want to use mg with search disabled.

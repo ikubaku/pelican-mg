@@ -54,7 +54,7 @@
     {% endif %}
     {% endblock %}
 
-    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-e07d6a1.css">
+    <link rel="stylesheet" type="text/css" href="{{SITEURL}}/theme/bundle-SHORTSHA1-696f21a.css">
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -127,10 +127,12 @@
             {% endif %}
 
             {% if READINGS %}
-            <div class="uk-panel uk-panel-box">
-                <h2 class="uk-panel-title">En ce moment je lis</h2>
-                <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
-            </div>
+            <a href="{{ SITEURL }}/past_readings.html">
+                <div class="uk-panel uk-panel-box">
+                    <h2 class="uk-panel-title">En ce moment je lis</h2>
+                    <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
+                </div>
+            </a>
             {% endif %}
 
             <div class="uk-panel uk-panel-box">
