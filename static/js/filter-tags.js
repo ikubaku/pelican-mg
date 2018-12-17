@@ -9,6 +9,18 @@
 
   window.tagFilters = {};
 
+  function parseQuery(queryString) {
+    let query = {};
+    (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&').forEach(pair => {
+        pair = pair.split('=');
+        let name = decodeURIComponent(pair[0]);
+        let values = decodeURIComponent(pair[1] || '').split(',');
+        if (!query[name]) { query[name] = []; }
+        Array.prototype.push.apply(query[name], values);
+    });
+    return query;
+  }
+
   function includes(anArray, value) {
     return anArray.indexOf(value) >= 0;
   }
@@ -59,10 +71,10 @@
     updateArticlesVisibility();
   };
 
-  window.toggleLangTagFilter = function toggleLangTagFilter(langs) {
+  window.toggleLangTagFilter = function toggleLangTagFilter(newLang) {
     let lang = this.textContent;
     window.tagFilters[`lang:${ lang }`] = undefined;
-    lang = langs[langs.indexOf(lang) + 1];
+    lang = newLang || window.langs[langs.indexOf(lang) + 1];
     if (typeof lang === 'undefined') {
       lang = 'lang';
       this.title = 'Language filter (disabled)';
@@ -73,4 +85,18 @@
     this.textContent = lang;
     updateArticlesVisibility();
   };
+
+  let queryParams = parseQuery(window.location.search);
+  for (let [qpName, qpValue] of Object.entries(queryParams)) {
+    if (!qpValue) { continue; }
+    if (qpName === 'lang') {
+        let buttonElem = document.getElementById('lang-tag-filter');
+        window.toggleLangTagFilter.bind(buttonElem)(qpValue[0]);
+    } else if (qpName === 'tags') {
+        qpValue.forEach(tag => {
+          let buttonElem = document.getElementById(tag + '-tag-filter');
+          window.toggleTagFilter.bind(buttonElem)(tag);
+        });
+    }
+  }
 }());
