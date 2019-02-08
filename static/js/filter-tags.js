@@ -86,6 +86,7 @@
     updateArticlesVisibility();
   };
 
+  // This is a bit redundant with /tag/$tag.html pages, but is slightly more powerful as it allow to combine multiple filters
   let queryParams = parseQuery(window.location.search);
   for (let [qpName, qpValue] of Object.entries(queryParams)) {
     if (!qpValue) { continue; }
