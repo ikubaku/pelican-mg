@@ -24,7 +24,7 @@ em {
   color: #444;
 }
 
-a {
+a, a > code, a > em, a > strong {
   color: #33b5e5; }
   a:hover {
     color: #33b5e5; }
