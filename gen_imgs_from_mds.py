@@ -8,6 +8,8 @@ SMALLEST['jpg'] = SMALLEST['jpeg'] = b'\xff\xd8\xff\xdb\x00C\x00\x03\x02\x02\x02
 SMALLEST['png'] = b'\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR\x00\x00\x00\x01\x00\x00\x00\x01\x08\x00\x00\x00\x00:~\x9bU\x00\x00\x00\nIDATx\x9cc\xfa\x0f\x00\x01\x05\x01\x02\xcf\xa0.\xcd\x00\x00\x00\x00IEND\xaeB`\x82'
 
 def gen_img(img_url):
+    if img_url[0] == '/':
+        img_url = img_url[1:]
     if os.path.exists(img_url):
         return
     os.makedirs(os.path.dirname(img_url), exist_ok=True)
