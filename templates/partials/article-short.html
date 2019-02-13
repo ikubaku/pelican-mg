@@ -10,7 +10,6 @@
                 {% if CATEGORY_SAVE_AS %} • <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>{% endif %}
                 {% if DISQUS_SITENAME %} • <br class="uk-visible-small"><i class="uk-icon-comment"></i> <a href="{{ SITEURL }}/{{ article.url }}#disqus_thread" itemprop="discussionUrl"></a>{% endif %}
             </p>
-            <!--{{ article.summary }}-->
             <p class="uk-article-lead" itemprop="description">{{ article.summary|striptags|striptags }}</p>
             {% if not MG_DISABLE_SUMMARY %}<p>{{ ' '.join(article.content.split(' ')[:75])|striptags|striptags }}...</p>{% endif %}
             <a href="{{ SITEURL }}/{{ article.url }}">Read More</a>

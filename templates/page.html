@@ -19,9 +19,9 @@
 <meta itemprop="image" content="{{ SITEURL }}/{{ META_IMAGE }}">
 {% endif %}
 {% if page.summary %}
-<meta property="og:description" content="{{ page.summary|striptags }}" >
-<meta name="twitter:description" content="{{ page.summary|striptags }}" >
-<meta itemprop="description" content="{{ page.summary|striptags }}">
+<meta property="og:description" content="{{ page.summary|striptags|escape }}" >
+<meta name="twitter:description" content="{{ page.summary|striptags|escape }}" >
+<meta itemprop="description" content="{{ page.summary|striptags|escape }}">
 {% endif %}
 {% endblock %}
 
