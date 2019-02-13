@@ -10,13 +10,15 @@
   window.tagFilters = {};
 
   function parseQuery(queryString) {
-    let query = {};
-    (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&').forEach(pair => {
-        pair = pair.split('=');
-        let name = decodeURIComponent(pair[0]);
-        let values = decodeURIComponent(pair[1] || '').split(',');
-        if (!query[name]) { query[name] = []; }
-        Array.prototype.push.apply(query[name], values);
+    const query = {};
+    (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&').forEach((pair) => {
+      pair = pair.split('=');
+      const name = decodeURIComponent(pair[0]);
+      const values = decodeURIComponent(pair[1] || '').split(',');
+      if (!query[name]) {
+        query[name] = [];
+      }
+      Array.prototype.push.apply(query[name], values);
     });
     return query;
   }
@@ -86,18 +88,21 @@
     updateArticlesVisibility();
   };
 
-  // This is a bit redundant with /tag/$tag.html pages, but is slightly more powerful as it allow to combine multiple filters
-  let queryParams = parseQuery(window.location.search);
-  for (let [qpName, qpValue] of Object.entries(queryParams)) {
-    if (!qpValue) { continue; }
+  // This is a bit redundant with /tag/$tag.html pages,
+  // but is slightly more powerful as it allow to combine multiple filters
+  const queryParams = parseQuery(window.location.search);
+  for (const [ qpName, qpValue ] of Object.entries(queryParams)) {
+    if (!qpValue) {
+      continue;
+    }
     if (qpName === 'lang') {
-        let buttonElem = document.getElementById('lang-tag-filter');
-        window.toggleLangTagFilter.bind(buttonElem)(qpValue[0]);
+      const buttonElem = document.getElementById('lang-tag-filter');
+      window.toggleLangTagFilter.bind(buttonElem)(qpValue[0]);
     } else if (qpName === 'tags') {
-        qpValue.forEach(tag => {
-          let buttonElem = document.getElementById(tag + '-tag-filter');
-          window.toggleTagFilter.bind(buttonElem)(tag);
-        });
+      qpValue.forEach((tag) => {
+        const buttonElem = document.getElementById(`${ tag }-tag-filter`);
+        window.toggleTagFilter.bind(buttonElem)(tag);
+      });
     }
   }
 }());

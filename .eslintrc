@@ -2,6 +2,7 @@
     "extends": ["strict"],
     "globals": {
         "document": false,
+        "langs": true,
         "window": false,
         "$": false
     },

@@ -6,7 +6,7 @@ set -o pipefail -o errexit -o nounset -o xtrace
 
 install () {
     pip install pelican markdown beautifulsoup4 pillow
-    ./gen_statics_bundles.py
+    ./gen_statics_bundles.py || true
 }
 
 install_dev () {
