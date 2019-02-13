@@ -1,5 +1,9 @@
 language: python
 python: 3.6
+cache:
+  directories:
+    - "$HOME/.cache/pip"
+    - node_modules
 install:
   - ./run.sh install
   - ./run.sh install_dev
