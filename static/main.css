@@ -179,6 +179,14 @@ a, a > code, a > em, a > strong {
 .mg-article-content {
   flex: 3 1 35rem; }
 
+article img {
+  display: block;
+  margin: 0 auto;
+  max-height: 30rem; }
+article figcaption {
+  text-align:center;
+  font-style: italic; }
+
 .mg-feed {
   color: #bf4d00; }
   .mg-feed:hover {
