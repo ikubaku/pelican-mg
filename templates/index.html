@@ -20,31 +20,36 @@ window.langs = {{ MG_LANG_FILTER_TAGS|tojson }};
 {% endif %}
 {% endblock %}
 
+{% block desc_header %}
+<div class="uk-panel-box mg-description">
+{{ DESCRIPTION }}
+</div>
+{% endblock %}
+
 {% block content %}
 <div class="uk-width-medium-4-5">
-
-{% if articles %}
-<ul class="mg-articles">
-{% for article in (articles_page.object_list if articles_page else articles) %}
-    <li>
-    {% if not MG_NO_EXCERPT and loop.index == 1 %}
-        {% include "partials/article-excerpt.html" %}
-    {% else %}
-        {% include "partials/article-short.html" %}
-    {% endif %}
-    </li>
-{% endfor %}
-</ul>
-{% if DEFAULT_PAGINATION  and articles_paginator.num_pages > 1 %}
-    <ul class="uk-pagination">
-        {% if articles_previous_page %}<li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}"><i class="uk-icon-angle-double-left"></i></a></li>{% endif %}
-        {% if articles_previous_page %}<li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}">{{ articles_previous_page.number }}</a></li>{% endif %}
-        <li class="uk-active"><span>{{ articles_page.number }}</span></li>
-        {% if articles_next_page %}<li><a href="{{ SITEURL }}/{{ articles_next_page.url }}"><i class="uk-icon-angle-double-right"></i></a></li>{% endif %}
-        {% if articles_next_page %}<li><a href="{{ SITEURL }}/{{ articles_next_page.url }}">{{ articles_next_page.number }}</a></li>{% endif %}
+    {% if articles %}
+    <ul class="mg-articles">
+    {% for article in (articles_page.object_list if articles_page else articles) %}
+        <li>
+        {% if not MG_NO_EXCERPT and loop.index == 1 %}
+            {% include "partials/article-excerpt.html" %}
+        {% else %}
+            {% include "partials/article-short.html" %}
+        {% endif %}
+        </li>
+    {% endfor %}
     </ul>
-{% endif %}
+    {% if DEFAULT_PAGINATION and articles_paginator.num_pages > 1 %}
+        <ul class="uk-pagination">
+            {% if articles_previous_page %}<li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}"><i class="uk-icon-angle-double-left"></i></a></li>{% endif %}
+            {% if articles_previous_page %}<li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}">{{ articles_previous_page.number }}</a></li>{% endif %}
+            <li class="uk-active"><span>{{ articles_page.number }}</span></li>
+            {% if articles_next_page %}<li><a href="{{ SITEURL }}/{{ articles_next_page.url }}"><i class="uk-icon-angle-double-right"></i></a></li>{% endif %}
+            {% if articles_next_page %}<li><a href="{{ SITEURL }}/{{ articles_next_page.url }}">{{ articles_next_page.number }}</a></li>{% endif %}
+        </ul>
+    {% endif %}
 
-{% endif %}
+    {% endif %}
 </div>
 {% endblock %}
