@@ -110,9 +110,10 @@
 
                 {% if SOCIAL %}
                 <div class="uk-panel uk-panel-box">
-                    <h2 class="uk-panel-title">Ubiquité</h2>
+                    <h2 class="uk-panel-title">Ubiquity</h2>
                     {% for link_destination, link in SOCIAL %}
-                    <a class="mg-icon-link" href="{{ link }}" title="Link to my {{ link_destination }}">
+                    <!-- http://microformats.org/wiki/rel-me -->
+                    <a class="mg-icon-link" href="{{ link }}" rel="me" title="Link to my {{ link_destination }}">
                         <i class="uk-icon-{{ link_destination }} uk-icon-medium" aria-hidden="true"></i>
                     </a>
                     {% endfor %}
