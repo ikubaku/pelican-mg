@@ -149,6 +149,9 @@ Define those variables as list of tag names if you want to enable the tag filter
 **EXTRA_ATOM_FEED**
 An extra URL providing an Atom feed of updates that you want inserted along the blog Atom feed.
 
+**WEBMENTION_URL** / **PINGBACK_URL**
+[Linkback](https://en.wikipedia.org/wiki/Linkback) URLs, that can be provided by example by [webmention.io](https://webmention.io)
+
 Example Configuration
 ----------------------
 
