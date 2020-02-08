@@ -20,7 +20,7 @@
     -   id: eslint
         name: eslint
         language: system
-        entry: sh -c 'type eslint && type node && type npm && eslint static/js/*.js'
+        entry: sh -c 'eslint static/js/*.js'
         files: ^static/js/
     -   id: stylelint
         name: stylelint

@@ -9,9 +9,8 @@ install () {
 }
 
 install_dev () {
-    npm install -g eslint eslint-config-strict eslint-plugin-filenames htmlhint stylelint
+    npm install -g eslint eslint-plugin-filenames htmlhint stylelint
     npm install eslint-config-strict stylelint-config-standard
-    type -a eslint && type -a node && type -a npm
     pip install html5lib html5validator pre-commit
     pre-commit install
 }
@@ -30,7 +29,9 @@ test_ludochaordic () {
     pip install -r requirements.txt
 
     ../pelican-mg/gen_imgs_from_mds.py content/*.md
+    sed -i '/PLUGINS +=/d' publishconf.py
     invoke publish -- -D
+    git checkout HEAD publishconf.py
 
     # Too many missing img alt attributes in thoses:
     rm output/street-art-and-hedonogeolostism-in-london.html output/variante-2-joueurs-pour-bang-le-jeu-de-des.html
