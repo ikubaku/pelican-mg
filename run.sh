@@ -5,7 +5,6 @@
 set -o pipefail -o errexit -o nounset -o xtrace
 
 install () {
-    pip install beautifulsoup4 markdown pelican pillow
     ./gen_statics_bundles.py || true
 }
 
@@ -26,9 +25,10 @@ test_ludochaordic () {
     fi
     [ -d ludochaordic ] || git clone https://github.com/Lucas-C/ludochaordic.git
     cd ludochaordic
+    pip install -r requirements.txt
 
     ../pelican-mg/gen_imgs_from_mds.py content/*.md
-    make DEBUG=1 OUTPUTDIR=output publish
+    invoke publish -- -D
 
     # Too many missing img alt attributes in thoses:
     rm output/street-art-and-hedonogeolostism-in-london.html output/variante-2-joueurs-pour-bang-le-jeu-de-des.html
