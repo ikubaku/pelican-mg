@@ -10,7 +10,8 @@ install () {
 
 install_dev () {
     npm install -g eslint eslint-config-strict eslint-plugin-filenames htmlhint stylelint
-    npm install stylelint-config-standard
+    npm install eslint-config-strict stylelint-config-standard
+    type -a eslint && type -a node && type -a npm
     pip install html5lib html5validator pre-commit
     pre-commit install
 }
@@ -20,7 +21,7 @@ test_ludochaordic () {
     if ! [ -d pelican-plugins ]; then
         git clone https://github.com/getpelican/pelican-plugins.git
         cd pelican-plugins
-        git submodule update --init image_process representative_image tag_cloud
+        git submodule update --init ctags_generator deadlinks image_process representative_image tag_cloud
         cd ..
     fi
     [ -d ludochaordic ] || git clone https://github.com/Lucas-C/ludochaordic.git
