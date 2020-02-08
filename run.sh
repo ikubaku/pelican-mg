@@ -23,7 +23,6 @@ test_ludochaordic () {
         git submodule update --init ctags_generator deadlinks image_process representative_image tag_cloud
         cd ..
     fi
-    [ -d pelican-plugin-linkbacks ] || git clone https://github.com/pelican-plugins/linkbacks pelican-plugin-linkbacks
     [ -d ludochaordic ] || git clone https://github.com/Lucas-C/ludochaordic.git
     cd ludochaordic
     pip install -r requirements.txt
