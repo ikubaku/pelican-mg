@@ -38,7 +38,9 @@ Features
 
 * [Open Graph](http://ogp.me) support.
 * [Twitter Summary Card](https://dev.twitter.com/cards/types/summary) support.
-* [Schema.org](http://schema.org) & [microformats2](https://indieweb.org/microformats) support
+* [Schema.org](http://schema.org) & [microformats2](https://indieweb.org/microformats) support:
+embed a [h-card](http://microformats.org/wiki/h-card) in all your website pages,
+and add the required markup to make your articles valid [h-entries](http://microformats.org/wiki/h-entry).
 * Search with [DuckDuckGo](https://duckduckgo.com/search_box).
 * Responsive design.
 * Comment with DISQUS or inno
@@ -152,14 +154,14 @@ An extra URL providing an Atom feed of updates that you want inserted along the 
 **WEBMENTION_URL** / **PINGBACK_URL**
 [Linkback](https://en.wikipedia.org/wiki/Linkback) URLs, that can be provided by example by [webmention.io](https://webmention.io)
 
-**ENABLE_HCARD**
-Allow embedding a [h-card](http://microformats.org/wiki/h-card) in all your website pages.
-
 **COUNTRY**
 Specify the country you live in. Will be included in your [h-card](http://microformats.org/wiki/h-card).
 
 **LOCALITY**
 Specify the city you live in. Will be included in your [h-card](http://microformats.org/wiki/h-card).
+
+**SHORT_BIO**
+GitHub/Twitter-like short bio. Will be included in your [h-card](http://microformats.org/wiki/h-card).
 
 Example Configuration
 ----------------------
