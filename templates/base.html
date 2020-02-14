@@ -110,6 +110,15 @@
 
             <div role="navigation" class="uk-width-medium-1-5 uk-hidden-small">
 
+                {% if ENABLE_HCARD %}
+                <p class="h-card" style="display: none">
+                    {% if AVATARS %}<img class="u-photo" src="{{ AVATARS[0] }}" alt="An avatar I use on the web" />{% endif %}
+                    <a class="p-name u-url" href="{{ SITEURL }}">Joe Bloggs</a>
+                    {% if LOCALITY %}<span class="p-locality">{{ LOCALITY }}</span>{% endif %}
+                    {% if COUNTRY %}<span class="p-country-name">{{ COUNTRY }}</span>{% endif %}
+                </p>
+                {% endif %}
+
                 <div class="uk-panel uk-panel-box">
                     <h3 class="uk-panel-title">Syndication</h3>
                     <a rel="alternate" type="application/atom+xml" href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" class="mg-feed"><i class="uk-icon-rss uk-icon-medium"></i> ATOM</a>
@@ -138,12 +147,12 @@
                 {% endif %}
 
                 {% if READINGS %}
-                <a href="{{ SITEURL }}/past_readings.html">
-                    <div class="uk-panel uk-panel-box">
+                <div class="uk-panel uk-panel-box">
+                    <a href="{{ SITEURL }}/past_readings.html">
                         <h2 class="uk-panel-title">En ce moment je lis</h2>
                         <img class="uk-thumbnail" src="{{ READINGS[0]['img_url'] }}" alt="{{ READINGS[0]['description'] }}" title="{{ READINGS[0]['description'] }}">
-                    </div>
-                </a>
+                    </a>
+                </div>
                 {% endif %}
 
                 <div class="uk-panel uk-panel-box">

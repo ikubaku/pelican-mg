@@ -38,7 +38,7 @@ Features
 
 * [Open Graph](http://ogp.me) support.
 * [Twitter Summary Card](https://dev.twitter.com/cards/types/summary) support.
-* [Schema.org](http://schema.org) support.
+* [Schema.org](http://schema.org) & [microformats2](https://indieweb.org/microformats) support
 * Search with [DuckDuckGo](https://duckduckgo.com/search_box).
 * Responsive design.
 * Comment with DISQUS or inno
@@ -152,70 +152,19 @@ An extra URL providing an Atom feed of updates that you want inserted along the 
 **WEBMENTION_URL** / **PINGBACK_URL**
 [Linkback](https://en.wikipedia.org/wiki/Linkback) URLs, that can be provided by example by [webmention.io](https://webmention.io)
 
+**ENABLE_HCARD**
+Allow embedding a [h-card](http://microformats.org/wiki/h-card) in all your website pages.
+
+**COUNTRY**
+Specify the country you live in. Will be included in your [h-card](http://microformats.org/wiki/h-card).
+
+**LOCALITY**
+Specify the city you live in. Will be included in your [h-card](http://microformats.org/wiki/h-card).
+
 Example Configuration
 ----------------------
 
-This is the settings file for Dev's Bytes.
-
-```python
-    #!/usr/bin/env python
-    # -*- coding: utf-8 -*- #
-    from __future__ import unicode_literals
-
-    AUTHOR = 'Luca Chiricozzi'
-    SITENAME = "Dev's Bytes"
-    ALT_NAME = "#! " + SITENAME
-    SITESUBTITLE = "Random programming stuff"
-    DESCRIPTION = "A blog about programming, *nix, and software development."
-    SITEURL = 'http://www.devsbytes.com'
-    FAVICON = 'favicon.ico'
-    FAVICON_TYPE = 'image/vnd.microsoft.icon'
-
-    META_IMAGE = SITEURL + "/static/img/og_logo.jpg"
-    META_IMAGE_TYPE = "image/jpeg"
-
-    PATH = 'content'
-
-    TIMEZONE = 'Europe/Rome'
-
-    DEFAULT_LANG = 'en'
-    LOCALE = 'en_GB'
-
-    THEME = "themes/mg"
-
-    # Social widget
-    SOCIAL = (('twitter', 'https://twitter.com/luca_chr'),
-              ('google-plus-square', 'https://plus.google.com/+LucaChiricozzi'),
-              ('github', 'https://github.com/lucachr'),
-              ('envelope', 'mailto:luca92web@gmail.com'),)
-
-    SHARE = True
-
-    FOOTER = ("&copy; 2015 Luca Chiricozzi. All rights reserved.<br>" +
-              "Code snippets in the pages are released under " +
-              "<a href=\"http://opensource.org/licenses/MIT\" target=\"_blank\">" +
-              "The MIT License</a>, unless otherwise specified.")
-
-
-    DEFAULT_PAGINATION = 10
-
-    TAG_SAVE_AS = ''
-    AUTHOR_SAVE_AS = ''
-    PLUGINS = ['representative_image']
-    DIRECT_TEMPLATES = ('index', 'categories', 'archives')
-
-    RELATIVE_URLS = False
-
-    FEED_ALL_ATOM = 'feeds/all.atom.xml'
-
-    DELETE_OUTPUT_DIRECTORY = True
-
-    TWITTER_USERNAME = 'luca_chr'
-    # DISQUS_SITENAME = "devsbytes"
-    # SC_PROJECT = '10224955'
-    # SC_SECURITY = '1f2cc438'
-
-```
+_cf._ <https://github.com/Lucas-C/ludochaordic>
 
 License
 ---------
