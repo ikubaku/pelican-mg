@@ -20,10 +20,10 @@
     -   id: eslint
         name: eslint
         language: system
-        entry: sh -c 'eslint static/js/*.js'
+        entry: sh -c 'npx eslint static/js/*.js'
         files: ^static/js/
     -   id: stylelint
         name: stylelint
         language: system
-        entry: sh -c 'stylelint static/main.css'
+        entry: sh -c 'npx stylelint static/main.css'
         files: ^static/js/main.css$

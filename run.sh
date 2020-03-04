@@ -9,7 +9,7 @@ install () {
 }
 
 install_dev () {
-    npm install -g eslint eslint-plugin-filenames htmlhint stylelint
+    npm install eslint eslint-plugin-filenames htmlhint stylelint
     npm install eslint-config-strict stylelint-config-standard
     pip install html5lib html5validator pre-commit
     pre-commit install
@@ -38,7 +38,7 @@ test_ludochaordic () {
     html5validator --root output/ --ignore-re='.*(Element "eof" not allowed as child of element "p" in this context.|Element "style" not allowed as child of element.*|Text not allowed in element "iframe" in this context.|Attribute "allow" not allowed on element "iframe" at this point.|No "p" element in scope but a "p" end tag seen.|End tag "p" implied, but there were open elements.|Unclosed element "a".|End tag "div" seen, but there were open elements.)' # issue with pelican renderer: <p> contains legally only inline-/inline-block-elements
 
     cp ../pelican-mg/.htmlhintrc output/
-    htmlhint output/
+    npx htmlhint output/
 }
 
 eval "$1"
